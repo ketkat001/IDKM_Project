@@ -1,8 +1,9 @@
 # frontend
 
-## Project setup
+## get started
 ```
-npm install
+$ npm install # to install related libraries
+$ npm run serve # run
 ```
 
 ### Compiles and hot-reloads for development
