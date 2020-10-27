@@ -1,16 +1,21 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link :to="{ name: 'Home' }">Home</router-link> 
-      <router-link :to="{ name: 'Login' }">Login</router-link> 
-      <router-link :to="{ name: 'MovieList' }">MovieList</router-link> 
-    </div>
+    <Navbar></Navbar>
     <router-view/>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import "@/assets/css/app.scss"
+import Navbar from "@/components/Navbar.vue"
+import Footer from "@/components/Footer.vue"
 
-export default {}
+export default {
+  name: 'App',
+  components: {
+    Navbar,
+    Footer
+  }
+}
 </script>
