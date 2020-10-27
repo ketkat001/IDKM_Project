@@ -26,3 +26,25 @@ python manage.py runserver
 
 * 제목이나 배우의 이름이 생각나지 않더라도 괜찮아요!
 
+## Contributing
+
+### Pull Request Process
+
+will be updated
+
+
+## About Us
+
+### 팀장 
+최정원
+
+### 팀원
+강용준
+
+김보성
+
+김진혁
+Git: https://github.com/rexiann/
+
+나종석
+
