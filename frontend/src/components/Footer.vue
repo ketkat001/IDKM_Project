@@ -1,17 +1,12 @@
 <template>
   <div id="footer">
-    <p>
-      <span>This is footer.vue </span>
-    </p>
+    <span>This is footer.vue </span>
   </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style>
-
 </style>

@@ -1,13 +1,25 @@
+@charset "UTF-8";
+@import "./properties.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 #app {
+  margin: 0;
+  padding: 0;
+
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-
+  color: $color-4;
 
   position: relative;
   height: 100vh;
+  
+  background-color: $color-1;
 }
 
 #nav {
@@ -15,6 +27,8 @@
   padding: 0;
   height: 80px;
   outline: none;
+  background-color: $color-2;
+  
 
   .nav-list {
     display: flex;
@@ -24,12 +38,12 @@
       margin: 0;
       padding: 10px;
       font-weight: bold;
-      color: #2c3e50;
+      color: $color-4;
       text-decoration: none;
     }
   
     a.router-link-exact-active {
-      color: #42b983;
+      color: $color-3;
     }
   }
 }
@@ -37,4 +51,5 @@
 #footer {
   position: absolute;
   bottom: 0;
+  text-align: center;
 }
