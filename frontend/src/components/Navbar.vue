@@ -1,9 +1,11 @@
 <template>
   <div id="nav">
     <div class="logo">
-      <a href="/">
-        <img src="@/assets/logo.png" alt="logo">  
-      </a>
+      <p>
+        <a href="/">
+          <img src="@/assets/logo.png" alt="logo" />
+        </a>
+      </p>
     </div>
     <div class="nav-list">
       <router-link :to="{ name: 'Home' }">Home</router-link>
@@ -14,10 +16,9 @@
 </template>
 
 <script>
-export default {
-  name: 'Navbar'
-}
-</script>
+import "@/assets/css/components/navbar.scss";
 
-<style>
-</style>
+export default {
+  name: "Navbar",
+};
+</script>

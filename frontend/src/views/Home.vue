@@ -3,6 +3,11 @@
     <p>
       <span>This is Home.vue</span>
     </p>
+    <input type="text" placeholder="검색어를 입력하세요!">
+    <div>
+      <h5>cards here</h5>
+      
+    </div>
   </div>
 </template>
 
@@ -10,7 +15,10 @@
 
 export default {
   name: 'Home',
-  components: {
+  data() {
+    return {
+      cards: []
+    }
   }
 }
 </script>

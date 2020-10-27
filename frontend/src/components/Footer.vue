@@ -1,12 +1,12 @@
 <template>
   <div id="footer">
-    <p>This is footer.vue </p>
+    <h4>Created by ESC. Powered by Vue.</h4>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Footer"
+};
 </script>
 
-<style>
-</style>

@@ -1,0 +1,32 @@
+@charset "UTF-8";
+@import "@/assets/css/properties.scss";
+
+#nav {
+  margin: 0;
+  padding: 0;
+  height: 80px;
+  outline: none;
+  background-color: $color-2;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    width: 100px;
+  }
+  .nav-list {
+    a {
+      margin: 0;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: $color-4;
+      text-decoration: none;
+    }
+  
+    a.router-link-exact-active {
+      color: $color-3;
+    }
+  }
+}
