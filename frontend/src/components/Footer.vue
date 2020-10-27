@@ -1,6 +1,6 @@
 <template>
   <div id="footer">
-    <span>This is footer.vue </span>
+    <p>This is footer.vue </p>
   </div>
 </template>
 
