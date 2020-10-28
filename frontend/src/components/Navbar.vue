@@ -10,7 +10,7 @@
     </div>
     <div class="nav-list">
       <router-link :to="{ name: 'Home' }">Home</router-link>
-      <router-link :to="{ name: 'MovieList' }">MovieList</router-link>
+      <router-link :to="{ name: 'Movies' }">Movies</router-link>
       <router-link :to="{ name: 'Login' }">Login</router-link>
     </div>
   </div>
