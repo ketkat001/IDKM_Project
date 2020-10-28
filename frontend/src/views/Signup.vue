@@ -23,7 +23,7 @@
         />
       </div>
       <div class="input-box">
-        <label for="signup-password-again">비밀번호 확인</label>
+        <label for="signup-password-again">비밀번호 확인 <span v-show="isPasswordMatch" class="password-verify">비밀번호가 일치하지 않습니다!</span></label>
         <input
           type="password"
           v-model="passwordCheck"
@@ -65,6 +65,11 @@ export default {
   name: "Signup",
   created() {
     // email, id, password RegExp needed
+  },
+  computed: {
+    isPasswordMatch() {
+      return this.passwordCheck && this.signupData.password && this.passwordCheck !== this.signupData.password
+    }
   },
   data() {
     return {
