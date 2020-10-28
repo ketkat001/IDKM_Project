@@ -3,7 +3,8 @@
     <div class="logo">
       <p>
         <a href="/">
-          <img src="@/assets/logo.png" alt="logo"/>
+          <span>LoGo</span>
+          <!-- <img src="@/assets/logo.png" alt="logo"/> -->
         </a>
       </p>
     </div>

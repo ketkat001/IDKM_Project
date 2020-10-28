@@ -1,6 +1,14 @@
 @charset "UTF-8";
 @import "./properties.scss";
 
-.login-page {
-    background-image: "@/assets/img/login-background.jpg"
+
+
+.login-page {    
+    background-image: url("../img/login-background.jpg");
+    height: 100%;
+    
+    input [type = "text"] {
+        margin: 0;
+        padding: 0;
+    }
 }
