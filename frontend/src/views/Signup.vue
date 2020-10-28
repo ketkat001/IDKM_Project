@@ -23,7 +23,12 @@
         />
       </div>
       <div class="input-box">
-        <label for="signup-password-again">비밀번호 확인 <span v-show="isPasswordMatch" class="password-verify">비밀번호가 일치하지 않습니다!</span></label>
+        <label for="signup-password-again"
+          >비밀번호 확인
+          <span v-show="!isPasswordMatch" class="warning-message"
+            >비밀번호가 일치하지 않습니다!</span
+          ></label
+        >
         <input
           type="password"
           v-model="passwordCheck"
@@ -53,7 +58,10 @@
         />
       </div>
 
-      <input type="submit" value="회원 가입" />
+      <div class="submit-box">
+        <input type="submit" value="회원 가입" :disabled="!hasAllProperty" />
+        <span v-show="!hasAllProperty" class="warning-message">모든 정보를 입력해주세요!</span>
+      </div>
     </div>
   </div>
 </template>
@@ -68,19 +76,32 @@ export default {
   },
   computed: {
     isPasswordMatch() {
-      return this.passwordCheck && this.signupData.password && this.passwordCheck !== this.signupData.password
+      return Boolean(
+        this.passwordCheck !== '' &&
+        this.signupData.password !== '' &&
+        this.passwordCheck === this.signupData.password
+      );
+    },
+    hasAllProperty() {
+      return Boolean(
+        this.signupData.userid !== '' && 
+        this.signupData.username !== '' && 
+        this.signupData.password !== '' && 
+        this.signupData.email !== '' &&
+        this.isPasswordMatch
+      )
     }
   },
   data() {
     return {
-      passwordCheck: '',
+      passwordCheck: "",
       signupData: {
-        userid: '',
-        username: '',
-        password: '',
-        email: ''
-      }
-    }
+        userid: "",
+        username: "",
+        password: "",
+        email: "",
+      },
+    };
   },
 };
 </script>
