@@ -21,7 +21,7 @@ export default {
   },
 
   data: () => ({
-    //
+    // adaptive navbar needed for scroll aciton
   }),
 };
 </script>
