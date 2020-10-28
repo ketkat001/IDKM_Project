@@ -26,7 +26,8 @@
   h1 {
     margin: 10px auto 20px auto;
   }
-
+}
+.input-box {
   input {
     border: 0;
     background-color: whitesmoke;
@@ -42,6 +43,8 @@
 .submit-box {
   width: 80%;
   text-align: center;
+  margin-top: 15px;
+  margin-bottom: 50px;
 
   input[type="submit"] {
     display: block;
@@ -49,6 +52,7 @@
     height: 50px;
     width: 100%;
     outline: none;
+    font-size: 1.1rem;
     border-radius: 10px;
     background-color: $color-3;
     color: whitesmoke;
