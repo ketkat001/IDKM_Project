@@ -37,9 +37,19 @@
     color:$color-1;
     border-radius: 10px;
   }
-  
+}
+
+.submit-box {
+  width: 80%;
+  text-align: center;
+
   input[type="submit"] {
-    margin: 50px auto auto;
+    display: block;
+    margin: auto;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    border-radius: 10px;
     background-color: $color-3;
     color: whitesmoke;
   }
@@ -47,6 +57,13 @@
   input[type="submit"]:hover {
     background-color: #aa183d;
   }
+
+  input[type="submit"]:disabled {
+    background-color: $color-2;
+  }
 }
   
-
+.warning-message {
+  font-size: 0.8rem;
+  color: $color-3;
+}
