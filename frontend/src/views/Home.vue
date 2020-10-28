@@ -3,22 +3,49 @@
     <div class="main-search d-flex flex-column">
       <div class="home-logo">
         <a class="logo-homepage" href=""></a>
-        <div class="home-search">
-          <v-text-field
-            class="search-input"
-            name="input"
-            label="생각나는 영화의 내용을 적어주세요"
-            append-icon="mdi-magnify"
-            :rules="rules">
-          </v-text-field>
+      </div>
+      <div class="home-search">
+        <v-text-field
+          class="search-input"
+          name="input"
+          placeholder="생각나는 영화의 내용을 적어주세요"
+          append-icon="mdi-magnify"
+          hide-details
+        >
+        </v-text-field>
+      </div>
+    </div>
+    <div class="main-board d-flex">
+      <div class="board-content">
+        <h1 class="main-title">
+          보고 싶은 영화의 제목이 생각이 나지 않을때는?
+          <span> -----와 함께 찾아봐요.</span>
+        </h1>
+      </div>
+    </div>
+    <div class="main-info">
+      <div class="info-items d-flex">
+        <div class="info-items-wrap d-flex">
+          <div class="info-item d-flex flex-column">
+          </div>
+          <div class="info-item d-flex flex-column">
+          </div>
+          <div class="info-item d-flex flex-column">
+          </div>
         </div>
       </div>
+      <svg class="main-info-curve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1438 134">
+        <path d="M1438 1442H0V31.001S438.105 0 719 .001c280.896 0 719 31 719 31V1442z" fill="currentColor"></path>
+      </svg>
+    </div>
+    <div class="main-slide">
+      
     </div>
   </div>
 </template>
 
 <script>
-import "@/assets/css/components/home.scss";
+import "@/assets/css/views/home.scss";
 
 export default {
   name: 'Home',
