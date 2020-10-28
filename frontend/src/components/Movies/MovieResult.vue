@@ -9,6 +9,3 @@ export default {
   name: "MovieResult",
 }
 </script>
-
-<style>
-</style>
