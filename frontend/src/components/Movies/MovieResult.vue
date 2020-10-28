@@ -1,15 +1,11 @@
 <template>
   <div>
-    This is MovieList.vue
+
   </div>
 </template>
 
 <script>
 export default {
-
+  name: "MovieResult",
 }
 </script>
-
-<style>
-
-</style>
