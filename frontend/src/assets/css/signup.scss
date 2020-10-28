@@ -9,3 +9,55 @@
     width: 100%;
     color: $color-4;
 }
+
+.signup-box {
+    margin: 10vh auto;
+    width: 30%;
+    min-width: 500px;
+    height: 85%;
+    background-color: rgba(0, 0, 0, .8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    text-align: left;
+    
+    h2 {
+      margin: 10px auto 20px auto;
+    }
+
+    
+    
+    input[type="submit"] {
+      margin: auto auto 30px;
+      height: 50px;
+      width: 80%;
+      border-radius: 10px;
+      background-color: $color-3;
+      color: whitesmoke;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #aa183d;
+    }
+  }
+
+.input-box {
+    width: 80%;
+    label {
+        display: block;
+        margin: 5px 20px;
+    }
+
+    input {
+        border: 0;
+        background-color: whitesmoke;
+        margin: 2px auto 2px;
+        padding: 20px;
+        height: 30%;
+        width: 100%;
+        outline: none;
+        color:$color-1;
+        border-radius: 10px;
+      }
+}
