@@ -1,5 +1,5 @@
 <template>
-  <div id="nav">
+  <div id="nav" :class="{ 'navbar--hidden': !showNavbar }">
     <div class="logo">
       <p>
         <a href="/">
@@ -21,5 +21,30 @@ import "@/assets/css/components/navbar.scss";
 
 export default {
   name: "Navbar",
+  mounted() {
+    this.lastScrollPosition = window.pageYOffset
+    window.addEventListener('scroll', this.onScroll)
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.onScroll)
+  },
+  methods: {
+    onScroll() {
+      let currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop
+      if (currentScrollPosition < 0) {
+        return
+      }
+      if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) {
+        return
+      }
+      this.showNavbar = currentScrollPosition < this.lastScrollPosition
+      this.lastScrollPosition = currentScrollPosition
+    },
+  },
+  data() {
+    return {
+      showNavbar: true,
+    }
+  }
 };
 </script>
