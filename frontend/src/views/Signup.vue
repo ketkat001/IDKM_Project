@@ -5,11 +5,16 @@
 </template>
 
 <script>
+import "@/assets/css/signup.scss"
+
 export default {
   name: 'Signup',
+  created() {
+    // email, id, password RegExp needed
+  },
   data() {
     return {
-      emailRE: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      
     }
   }
 
