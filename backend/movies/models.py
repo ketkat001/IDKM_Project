@@ -2,14 +2,14 @@ from django.db import models
 from django.conf import settings
 
 # Create your models here.
-class Genre(models.model):
+class Genre(models.Model):
     name = models.CharField(max_length=100)
 
-class overview_tag(models.model):
-    overview_t = models.CharField(max_length=255)
+class Overview_tag(models.Model):
+    tags = models.CharField(max_length=255)
 
-class movie_cast(models.model):
-    movie_cast = models.CharField(max_length=255)
+class Movie_cast(models.Model):
+    actors = models.CharField(max_length=255)
 
 class Movie(models.Model):
     title = models.CharField(max_length=255)
@@ -21,6 +21,6 @@ class Movie(models.Model):
     vote_average = models.FloatField(max_length=11)
     rating = models.FloatField(max_length=11)
     genres = models.ManyToManyField(Genre, related_name='movie_genre')
-    overview_tags = models.ManyToManyField(overview_tag, related_name='overview_tag')
-    movie_casts = models.ManyToManyField(movie_cast, related_name='movie_cast')
+    overview_tags = models.ManyToManyField(Overview_tag, related_name='overview_tag')
+    movie_casts = models.ManyToManyField(Movie_cast, related_name='movie_cast')
 

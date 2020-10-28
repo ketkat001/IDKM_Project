@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import permissions, generics
 from .serializers import CreateUserSerializer
-from knox.models import AuthToken
+# from knox.models import AuthToken
 # Create your views here.
 
 

@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/2.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
-import my_settings
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -39,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'rest_framework',
-    'knox',
+
+    'movies',
 ]
 
 MIDDLEWARE = [
@@ -87,7 +87,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'DKM',
         'USER': 'root',
-        'PASSWORD': 'ssafy',
+        'PASSWORD': '1234',
         'PORT': '3306',
         'HOST': '127.0.0.1',
     }
@@ -137,5 +137,6 @@ AUTH_USER_MODEL = "accounts.User"
 
 
 REST_FRAMEWORK = {
-    
+    'DEFAULT_PAGINATION_CLASS': 'backend.pagination.CustomPagination',
+    # 'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',),
 }
