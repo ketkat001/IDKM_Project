@@ -1,9 +1,9 @@
 <template>
-  <div id="app">
+  <v-app>
     <Navbar></Navbar>
-    <router-view class="router-view"/>
+    <router-view></router-view>
     <Footer></Footer>
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -11,11 +11,17 @@ import "@/assets/css/app.scss"
 import Navbar from "@/components/Navbar.vue"
 import Footer from "@/components/Footer.vue"
 
+
 export default {
   name: 'App',
+
   components: {
     Navbar,
-    Footer
-  }
-}
+    Footer,
+  },
+
+  data: () => ({
+    //
+  }),
+};
 </script>
