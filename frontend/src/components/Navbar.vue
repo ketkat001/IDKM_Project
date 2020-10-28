@@ -3,6 +3,7 @@
     <div class="logo">
       <p>
         <a href="/">
+          <span>LoGo</span>
           <!-- <img src="@/assets/logo.png" alt="logo"/> -->
         </a>
       </p>

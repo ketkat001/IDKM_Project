@@ -1,15 +1,24 @@
 <template>
-  <div>
-    This is Login.vue
+  <div class="login-page">
+    <div class="login-box">
+      <h1>로그인</h1>
+      <label for="login-id">아이디</label>
+      <input type="text" label="id" name="login-id" placeholder="아이디를 입력하세요" required="아이디를 입력해 주세요."/>
+      <label for="login-password">비밀번호</label>
+      <input type="password" label="password" name="login-password" placeholder="비밀번호를 입력하세요" required="비밀번호를 입력해 주세요."/>
+      <input type="submit" value="제 출" />
+      <p><span>아직 회원이 아니신가요?   <a href="/signup">회원가입 하러가기</a></span></p>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
+import "@/assets/css/login.scss";
 
-}
+export default {
+  name: "Login"
+};
 </script>
 
 <style>
-
 </style>
