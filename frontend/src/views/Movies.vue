@@ -1,7 +1,7 @@
 <template>
   <div class="movie-list">
-    <MovieSearch />
     <MovieResult />
+    <MovieSearch />
     <MovieSuggest />
   </div>
 </template>
