@@ -2,19 +2,19 @@
   <div class="movie-result">
     <h1>이런 영화를 찾으셨나요?</h1>
     <div class="result-cards">
-      <MoviesCard v-for="card in cardList" :key="card.id" :card="card" />
+      <MovieCard v-for="card in cardList" :key="card.id" :card="card" />
     </div>
   </div>
 </template>
 
 <script>
 import "@/assets/css/components/movies/movieResult.scss";
-import MoviesCard from "@/components/Movies/MoviesCard.vue";
+import MovieCard from "@/components/Movies/MovieCard.vue";
 
 export default {
   name: "MovieResult",
   components: {
-    MoviesCard,
+    MovieCard,
   },
   data() {
     return {
