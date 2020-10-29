@@ -1,9 +1,9 @@
 @charset "UTF-8";
-@import "./properties.scss";
+@import "@/assets/css/properties.scss";
 
 
 .login-page {
-  background-image: url("../img/login-background.jpg");
+  background-image: url("../../img/login-background.jpg");
   background-size: cover;
   background-position: center;
   height: 100%;

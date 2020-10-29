@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import "./properties.scss";
+@import "@/assets/css/properties.scss";
 
 .movie-list {
   border: 0;
@@ -9,5 +9,5 @@
   width: 100%;
   background-size: cover;
   background-position: center;
-  background-image: url("../img/movielist-background.jpg");
+  background-image: url("../../img/movielist-background.jpg");
 }

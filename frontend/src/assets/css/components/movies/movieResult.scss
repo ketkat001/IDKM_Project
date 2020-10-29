@@ -1,0 +1,17 @@
+@charset "UTF-8";
+@import "@/assets/css/properties.scss";
+
+.movie-result {
+  color: $color-4;
+  text-align: center;
+
+  h1 {
+    margin: 10px auto;
+  }
+}
+
+.result-cards {
+  display: flex;
+  flex-wrap: nowrap;
+  text-align: left;
+}

@@ -8,8 +8,11 @@
 </template>
 
 <script>
+
+
 export default {
-  name: "MovieSearch"
+  name: "MovieSearch",
+  
 
 }
 </script>

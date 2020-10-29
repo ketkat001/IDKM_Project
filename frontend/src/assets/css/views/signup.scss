@@ -1,8 +1,8 @@
 @charset "UTF-8";
-@import "./properties.scss";
+@import "@/assets/css/properties.scss";
 
 .signup-page {
-  background-image: url("../img/signup-background.jpg");
+  background-image: url("../../img/signup-background.jpg");
   background-size: cover;
   background-position: center;
   height: 100%;
