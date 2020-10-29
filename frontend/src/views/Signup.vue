@@ -67,7 +67,7 @@
 </template>
 
 <script>
-import "@/assets/css/signup.scss";
+import "@/assets/css/views/signup.scss";
 
 export default {
   name: "Signup",
