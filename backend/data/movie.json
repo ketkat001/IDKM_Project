@@ -1,0 +1,91 @@
+{
+	"model": "movies.movie",
+	"pk": "20198996",
+	"fields": {
+		"movieNm": "여름날",
+		"movieNmEn": "Days in a Summer",
+		"openDt": "20200820",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20208828",
+	"fields": {
+		"movieNm": "불량한 가족",
+		"movieNmEn": "Road Family",
+		"openDt": "20200709",
+		"repGenreNm": "코미디"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20207256",
+	"fields": {
+		"movieNm": "황무지 5월의 고해",
+		"movieNmEn": "",
+		"openDt": "20201028",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20205980",
+	"fields": {
+		"movieNm": "테슬라",
+		"movieNmEn": "Tesla",
+		"openDt": "20201028",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20196675",
+	"fields": {
+		"movieNm": "젊은이의 양지",
+		"movieNmEn": "Light for the Youth",
+		"openDt": "20201028",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20209946",
+	"fields": {
+		"movieNm": "담쟁이",
+		"movieNmEn": "Take Me Home",
+		"openDt": "20201028",
+		"repGenreNm": "가족"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20209304",
+	"fields": {
+		"movieNm": "다만 악에서 구하소서 파이널컷",
+		"movieNmEn": "DELIVER US FROM EVIL FINALCUT",
+		"openDt": "20201028",
+		"repGenreNm": "액션"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20208487",
+	"fields": {
+		"movieNm": "셔터: 죽음의 숲",
+		"movieNmEn": "Rootwood",
+		"openDt": "20201027",
+		"repGenreNm": "공포(호러)"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20208529",
+	"fields": {
+		"movieNm": "친척 여동생 - 무삭제",
+		"movieNmEn": "",
+		"openDt": "20201005",
+		"repGenreNm": "기타"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20203584",
+	"fields": {
+		"movieNm": "섹스 소녀2",
+		"movieNmEn": "",
+		"openDt": "20201005",
+		"repGenreNm": "멜로/로맨스"
+	}
+}
