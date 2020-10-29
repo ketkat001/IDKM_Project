@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import "@/assets/css/login.scss";
+import "@/assets/css/views/login.scss";
 
 export default {
   name: "Login",
