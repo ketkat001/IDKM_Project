@@ -6,7 +6,7 @@
         <label for="login-id">아이디</label>
         <input
           type="text"
-          v-model="loginData.userid"
+          v-model.trim="loginData.userid"
           name="login-id"
           placeholder="아이디를 입력하세요"
           required="아이디를 입력해 주세요."
@@ -16,7 +16,7 @@
         <label for="login-password">비밀번호</label>
         <input
           type="password"
-          v-model="loginData.password"          
+          v-model.trim="loginData.password"          
           name="login-password"
           placeholder="비밀번호를 입력하세요"
           required="비밀번호를 입력해 주세요."
