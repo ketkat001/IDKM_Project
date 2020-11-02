@@ -59,7 +59,7 @@
       </div>
 
       <div class="submit-box">
-        <input type="submit" value="회원 가입" :disabled="!hasAllProperty" />
+        <input type="submit" value="회원 가입" :disabled="!hasAllProperty" @click="signup(signupData)"/>
         <span v-show="!hasAllProperty" class="warning-message">모든 정보를 입력해주세요!</span>
       </div>
     </div>
@@ -92,6 +92,9 @@ export default {
         this.isPasswordMatch
       )
     }
+  },
+  methods: {
+    ...mapActions(["signup"])
   },
   data() {
     return {
