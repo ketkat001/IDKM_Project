@@ -31,7 +31,7 @@
         >
         <input
           type="password"
-          v-model="passwordCheck"
+          v-model.lazy="passwordCheck"
           name="signup-password-again"
           placeholder="비밀번호를 한번 더 입력하세요"
           required="비밀번호를 한번 더 입력하셔야 합니다."
