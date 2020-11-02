@@ -31,7 +31,7 @@
         >
         <input
           type="password"
-          v-model="passwordCheck"
+          v-model.lazy="passwordCheck"
           name="signup-password-again"
           placeholder="비밀번호를 한번 더 입력하세요"
           required="비밀번호를 한번 더 입력하셔야 합니다."
@@ -59,7 +59,7 @@
       </div>
 
       <div class="submit-box">
-        <input type="submit" value="회원 가입" :disabled="!hasAllProperty" />
+        <input type="submit" value="회원 가입" :disabled="!hasAllProperty" @click="signup(signupData)"/>
         <span v-show="!hasAllProperty" class="warning-message">모든 정보를 입력해주세요!</span>
       </div>
     </div>
@@ -68,6 +68,7 @@
 
 <script>
 import "@/assets/css/views/signup.scss";
+import { mapActions } from "vuex"
 
 export default {
   name: "Signup",
@@ -91,6 +92,9 @@ export default {
         this.isPasswordMatch
       )
     }
+  },
+  methods: {
+    ...mapActions(["signup"])
   },
   data() {
     return {

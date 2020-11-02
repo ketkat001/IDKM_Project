@@ -23,7 +23,7 @@
         />
       </div>
       <div class="submit-box">
-        <input type="submit" value="로그인하기" :disabled="!hasAllProperties" />
+        <input type="submit" value="로그인하기" :disabled="!hasAllProperties" @click="login(loginData)" />
         <span v-show="!hasAllProperties" class="warning-message"
           >아이디 또는 비밀번호를 입력해주세요!</span
         >
@@ -39,6 +39,7 @@
 
 <script>
 import "@/assets/css/views/login.scss";
+import { mapActions } from "vuex"
 
 export default {
   name: "Login",
@@ -49,6 +50,9 @@ export default {
         this.loginData.password
       )
     }
+  },
+  methods: {
+    ...mapActions(["login"])
   },
   data() {
     return {
