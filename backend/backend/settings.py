@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'accounts',
     'rest_framework',
-
     'movies',
 ]
 

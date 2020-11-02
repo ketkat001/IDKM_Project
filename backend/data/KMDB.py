@@ -11,7 +11,7 @@ from collections import OrderedDict
 # print(type(title))
 startCount = 0
 with open('KMDB_movie.json', 'w', encoding="utf-8") as make_file:
-    while startCount < 70000:
+    while startCount < 1:
         # url = f"http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&listCount=500&title={title}&detail=Y&ServiceKey=H4T135AW903C3067983L"
         url = f"http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&listCount=500&startCount={startCount}&detail=Y&ServiceKey=H4T135AW903C3067983L"
         request = ul.Request(url)
