@@ -68,6 +68,7 @@
 
 <script>
 import "@/assets/css/views/signup.scss";
+import { mapActions } from "vuex"
 
 export default {
   name: "Signup",
