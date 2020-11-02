@@ -1,6 +1,8 @@
 export default {
-  SERVER: '',
+  SERVER: 'http://127.0.0.1:8000',
   ROUTES: {
-    login: '',
+    login: '/login',
+    logout: '/logout',
+    signup: '/signup'
   }
 }
