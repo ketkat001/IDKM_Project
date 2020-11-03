@@ -3,7 +3,13 @@
     <img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg">
     <div class="movie-content" v-if="movieHover">
       <h2> {{ card.title }} </h2>
-      <h4> {{card.text}} content </h4>
+      <v-row>
+        <v-col cols="12" sm="3">
+          <v-btn>
+            <v-icon>mdi-heart</v-icon>
+          </v-btn>
+        </v-col>
+      </v-row>
     </div>
   </div>
 </template>
