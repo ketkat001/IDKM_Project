@@ -1,0 +1,901 @@
+{
+	"model": "movies.movie",
+	"pk": "20200877",
+	"fields": {
+		"movieNm": "아틀란티스의 왕",
+		"movieNmEn": "King of Atlantis",
+		"openDt": "",
+		"repGenreNm": "코미디"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200262",
+	"fields": {
+		"movieNm": "엽문 리부트 2020",
+		"movieNmEn": "Ip Man: Kung Fu Master",
+		"openDt": "",
+		"repGenreNm": "액션"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20145141",
+	"fields": {
+		"movieNm": "위플래쉬",
+		"movieNmEn": "Whiplash",
+		"openDt": "20150312",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200683",
+	"fields": {
+		"movieNm": "수상한 협상",
+		"movieNmEn": "The Day Shall Come",
+		"openDt": "",
+		"repGenreNm": "코미디"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20197122",
+	"fields": {
+		"movieNm": "보스턴 1947",
+		"movieNmEn": "",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20040725",
+	"fields": {
+		"movieNm": "화양연화",
+		"movieNmEn": "In The Mood For Love",
+		"openDt": "20001020",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200876",
+	"fields": {
+		"movieNm": "바지라오 마스타니",
+		"movieNmEn": "Bajirao Mastani",
+		"openDt": "",
+		"repGenreNm": "액션"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200851",
+	"fields": {
+		"movieNm": "마리 콤",
+		"movieNmEn": "MARY KOM",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200875",
+	"fields": {
+		"movieNm": "모차르트 브라더스",
+		"movieNmEn": "The Mozart Brothers",
+		"openDt": "",
+		"repGenreNm": "코미디"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20198996",
+	"fields": {
+		"movieNm": "여름날",
+		"movieNmEn": "Days in a Summer",
+		"openDt": "20200820",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200850",
+	"fields": {
+		"movieNm": "러빙 커플",
+		"movieNmEn": "Loving Couples",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20208828",
+	"fields": {
+		"movieNm": "불량한 가족",
+		"movieNmEn": "Road Family",
+		"openDt": "20200709",
+		"repGenreNm": "코미디"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200849",
+	"fields": {
+		"movieNm": "연미복을 입은 여자",
+		"movieNmEn": "Girl in Tail",
+		"openDt": "",
+		"repGenreNm": "기타"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20205381",
+	"fields": {
+		"movieNm": "내언니전지현과 나",
+		"movieNmEn": "People in Elancia",
+		"openDt": "",
+		"repGenreNm": "다큐멘터리"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20208843",
+	"fields": {
+		"movieNm": "호랑이와 소",
+		"movieNmEn": "Tiger and Ox",
+		"openDt": "",
+		"repGenreNm": "애니메이션"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20183642",
+	"fields": {
+		"movieNm": "뮤직 앤 리얼리티 ",
+		"movieNmEn": "Fiction & Other Realities",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200874",
+	"fields": {
+		"movieNm": "스티그 라르손 – 불길에 뛰어든 남자",
+		"movieNmEn": "Stieg Larsson: The Man Who Played with Fire",
+		"openDt": "",
+		"repGenreNm": "다큐멘터리"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200848",
+	"fields": {
+		"movieNm": "아니아라",
+		"movieNmEn": "Aniara",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200873",
+	"fields": {
+		"movieNm": "럭키 원",
+		"movieNmEn": "Lucky One",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200800",
+	"fields": {
+		"movieNm": "수네 vs 수네",
+		"movieNmEn": "Sune vs Sune",
+		"openDt": "",
+		"repGenreNm": "코미디"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20196717",
+	"fields": {
+		"movieNm": "조안",
+		"movieNmEn": "Joan",
+		"openDt": "",
+		"repGenreNm": "미스터리"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200583",
+	"fields": {
+		"movieNm": "요가학원 : 죽음의 쿤달리니",
+		"movieNmEn": "",
+		"openDt": "",
+		"repGenreNm": "공포(호러)"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200847",
+	"fields": {
+		"movieNm": "쌓여버린 여자들:잔뜩 해주세요",
+		"movieNmEn": "",
+		"openDt": "",
+		"repGenreNm": "멜로/로맨스"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20196377",
+	"fields": {
+		"movieNm": "동행",
+		"movieNmEn": "Accompany",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20187622",
+	"fields": {
+		"movieNm": "노마드",
+		"movieNmEn": "Where to Go",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20129151",
+	"fields": {
+		"movieNm": "불륜",
+		"movieNmEn": "Unlawful Love",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200861",
+	"fields": {
+		"movieNm": "여름바다에 뜨는 가벼운 것들",
+		"movieNmEn": "Floating Deep Down Summer",
+		"openDt": "",
+		"repGenreNm": "멜로/로맨스"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200604",
+	"fields": {
+		"movieNm": "에케호모, 이 사람을 보라",
+		"movieNmEn": "Ecce Homo, Behold the Man",
+		"openDt": "",
+		"repGenreNm": "뮤지컬"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20186864",
+	"fields": {
+		"movieNm": "딸들의 밥상",
+		"movieNmEn": "Daughter's Table",
+		"openDt": "",
+		"repGenreNm": "뮤지컬"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20196372",
+	"fields": {
+		"movieNm": "밤손님",
+		"movieNmEn": "A Night Guest",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200602",
+	"fields": {
+		"movieNm": "바이, 써클",
+		"movieNmEn": "Bye, Circle",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20196345",
+	"fields": {
+		"movieNm": "99년식",
+		"movieNmEn": "99's",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20194076",
+	"fields": {
+		"movieNm": "모래",
+		"movieNmEn": "Morae (Sand)",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20201464",
+	"fields": {
+		"movieNm": "빛나는 순간",
+		"movieNmEn": "Everglow",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20206097",
+	"fields": {
+		"movieNm": "나는 살을 빼기로 결심했다",
+		"movieNmEn": "Heavy Craving",
+		"openDt": "",
+		"repGenreNm": "가족"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20193532",
+	"fields": {
+		"movieNm": "스카이와 친구들: 로보시티의 비밀",
+		"movieNmEn": "Robiki ",
+		"openDt": "",
+		"repGenreNm": "애니메이션"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20207256",
+	"fields": {
+		"movieNm": "황무지 5월의 고해",
+		"movieNmEn": "",
+		"openDt": "20201028",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20193531",
+	"fields": {
+		"movieNm": "초야: 맛의 유혹",
+		"movieNmEn": "The Lady Improper",
+		"openDt": "",
+		"repGenreNm": "멜로/로맨스"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20205980",
+	"fields": {
+		"movieNm": "테슬라",
+		"movieNmEn": "Tesla",
+		"openDt": "20201028",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20196675",
+	"fields": {
+		"movieNm": "젊은이의 양지",
+		"movieNmEn": "Light for the Youth",
+		"openDt": "20201028",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20209946",
+	"fields": {
+		"movieNm": "담쟁이",
+		"movieNmEn": "Take Me Home",
+		"openDt": "20201028",
+		"repGenreNm": "가족"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20209304",
+	"fields": {
+		"movieNm": "다만 악에서 구하소서 파이널컷",
+		"movieNmEn": "DELIVER US FROM EVIL FINALCUT",
+		"openDt": "20201028",
+		"repGenreNm": "액션"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20197853",
+	"fields": {
+		"movieNm": "잔칫날",
+		"movieNmEn": "Festival",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20182674",
+	"fields": {
+		"movieNm": "걸",
+		"movieNmEn": "Girl",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20208487",
+	"fields": {
+		"movieNm": "셔터: 죽음의 숲",
+		"movieNmEn": "Rootwood",
+		"openDt": "20201027",
+		"repGenreNm": "공포(호러)"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20201024",
+	"fields": {
+		"movieNm": "메리 좀 찾아줘",
+		"movieNmEn": "Father, Please Find Mary.",
+		"openDt": "",
+		"repGenreNm": "액션"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20208529",
+	"fields": {
+		"movieNm": "친척 여동생 - 무삭제",
+		"movieNmEn": "",
+		"openDt": "20201005",
+		"repGenreNm": "기타"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20203584",
+	"fields": {
+		"movieNm": "섹스 소녀2",
+		"movieNmEn": "",
+		"openDt": "20201005",
+		"repGenreNm": "멜로/로맨스"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20201700",
+	"fields": {
+		"movieNm": "완벽한 스와핑",
+		"movieNmEn": "",
+		"openDt": "20201002",
+		"repGenreNm": "성인물(에로)"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20207699",
+	"fields": {
+		"movieNm": "유쾌한 과부",
+		"movieNmEn": "The Merry Widow",
+		"openDt": "20201002",
+		"repGenreNm": "공연"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20208137",
+	"fields": {
+		"movieNm": "춘사월의 정사",
+		"movieNmEn": "",
+		"openDt": "20201002",
+		"repGenreNm": "멜로/로맨스"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20201468",
+	"fields": {
+		"movieNm": "투빅맨",
+		"movieNmEn": "TWO BIG MEN",
+		"openDt": "",
+		"repGenreNm": "액션"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200799",
+	"fields": {
+		"movieNm": "특수부대 백호",
+		"movieNmEn": "Peak Rescue",
+		"openDt": "",
+		"repGenreNm": "액션"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20208479",
+	"fields": {
+		"movieNm": "세 여자",
+		"movieNmEn": "Sangre",
+		"openDt": "20201027",
+		"repGenreNm": "멜로/로맨스"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20208890",
+	"fields": {
+		"movieNm": "바흐: 숨겨진 작곡가",
+		"movieNmEn": "Written by Mrs.Bach: Broken Silence",
+		"openDt": "20201027",
+		"repGenreNm": "다큐멘터리"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20204643",
+	"fields": {
+		"movieNm": "다시 만난 날들",
+		"movieNmEn": "Da Capo",
+		"openDt": "20200924",
+		"repGenreNm": "뮤지컬"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200810",
+	"fields": {
+		"movieNm": "섹션 4 : 우리는 병이 아니다",
+		"movieNmEn": "",
+		"openDt": "",
+		"repGenreNm": "기타"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200798",
+	"fields": {
+		"movieNm": "섹션 3 : 내 삶의 바이러스들",
+		"movieNmEn": "",
+		"openDt": "",
+		"repGenreNm": "기타"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200797",
+	"fields": {
+		"movieNm": "섹션 2 : 나는아프다, 고로 존재한다",
+		"movieNmEn": "",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200796",
+	"fields": {
+		"movieNm": "섹션 1 : 아픈 몸",
+		"movieNmEn": "",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20153982",
+	"fields": {
+		"movieNm": "에이미",
+		"movieNmEn": "AMY",
+		"openDt": "20151105",
+		"repGenreNm": "다큐멘터리"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200809",
+	"fields": {
+		"movieNm": "회춘 마사지샵",
+		"movieNmEn": "",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200808",
+	"fields": {
+		"movieNm": "투잡하는 옷가게 미녀아가씨",
+		"movieNmEn": "",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200807",
+	"fields": {
+		"movieNm": "여직원의 은밀한 회사생활",
+		"movieNmEn": "",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200806",
+	"fields": {
+		"movieNm": "남자맛을 알아버린 스무살 얼짱녀",
+		"movieNmEn": "",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20205706",
+	"fields": {
+		"movieNm": "쿠사마 야요이: 무한의 세계",
+		"movieNmEn": "Kusama: Infinity",
+		"openDt": "",
+		"repGenreNm": "다큐멘터리"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200294",
+	"fields": {
+		"movieNm": "런",
+		"movieNmEn": "Run",
+		"openDt": "",
+		"repGenreNm": "미스터리"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200780",
+	"fields": {
+		"movieNm": "더 프로텍터",
+		"movieNmEn": "The Protector",
+		"openDt": "",
+		"repGenreNm": "코미디"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200795",
+	"fields": {
+		"movieNm": "래비지",
+		"movieNmEn": "Ravage",
+		"openDt": "",
+		"repGenreNm": "스릴러"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200794",
+	"fields": {
+		"movieNm": "애원하는 유부녀 무삭제",
+		"movieNmEn": "",
+		"openDt": "",
+		"repGenreNm": "멜로/로맨스"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200779",
+	"fields": {
+		"movieNm": "코마",
+		"movieNmEn": "Koma",
+		"openDt": "20201112",
+		"repGenreNm": "SF"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200793",
+	"fields": {
+		"movieNm": "앞 집으로 이사 온 욕구불만 유부녀",
+		"movieNmEn": "",
+		"openDt": "",
+		"repGenreNm": "성인물(에로)"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200792",
+	"fields": {
+		"movieNm": "친구의 여자친구를 범했습니다",
+		"movieNmEn": "",
+		"openDt": "",
+		"repGenreNm": "성인물(에로)"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200778",
+	"fields": {
+		"movieNm": "욕망으로 얼룩진 시아버지와의 7일",
+		"movieNmEn": "",
+		"openDt": "",
+		"repGenreNm": "성인물(에로)"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20203605",
+	"fields": {
+		"movieNm": "마누라 공유하기 - 무삭제판",
+		"movieNmEn": "",
+		"openDt": "",
+		"repGenreNm": "멜로/로맨스"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20202310",
+	"fields": {
+		"movieNm": "나는 야한 여자가 좋다 4 - 무삭제판",
+		"movieNmEn": "",
+		"openDt": "",
+		"repGenreNm": "멜로/로맨스"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20207495",
+	"fields": {
+		"movieNm": "특수요원",
+		"movieNmEn": "",
+		"openDt": "",
+		"repGenreNm": "액션"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200777",
+	"fields": {
+		"movieNm": "여성친구 무삭제",
+		"movieNmEn": "",
+		"openDt": "",
+		"repGenreNm": "기타"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200791",
+	"fields": {
+		"movieNm": "홈 커밍",
+		"movieNmEn": "Homecoming",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200790",
+	"fields": {
+		"movieNm": "긴섹충 무삭제",
+		"movieNmEn": "",
+		"openDt": "",
+		"repGenreNm": "기타"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200776",
+	"fields": {
+		"movieNm": "상구 찾아 삼만리",
+		"movieNmEn": "Where is Fucking Sung gu?",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200200",
+	"fields": {
+		"movieNm": "추억의 검정고무신",
+		"movieNmEn": "",
+		"openDt": "20201119",
+		"repGenreNm": "애니메이션"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20198863",
+	"fields": {
+		"movieNm": "구르는 수레바퀴",
+		"movieNmEn": "SAMSARA",
+		"openDt": "20200923",
+		"repGenreNm": "가족"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20050313",
+	"fields": {
+		"movieNm": "아치와 씨팍",
+		"movieNmEn": "Aachi & Ssipak",
+		"openDt": "20060628",
+		"repGenreNm": "애니메이션"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20196673",
+	"fields": {
+		"movieNm": "에듀케이션",
+		"movieNmEn": "The Education",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20190674",
+	"fields": {
+		"movieNm": "동아시아반일무장전선",
+		"movieNmEn": "East Asia Anti-Japan Armed Front",
+		"openDt": "20200820",
+		"repGenreNm": "다큐멘터리"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20190465",
+	"fields": {
+		"movieNm": "욕창",
+		"movieNmEn": "A Bedsore",
+		"openDt": "20200702",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200706",
+	"fields": {
+		"movieNm": "유부녀 꼬시기",
+		"movieNmEn": "Courtship",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200705",
+	"fields": {
+		"movieNm": "아내의 직업",
+		"movieNmEn": "Part-time job in the afternoon",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200704",
+	"fields": {
+		"movieNm": "남편의 사채 빚을 갚아주는 아내",
+		"movieNmEn": "How to escape from debt hell",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200756",
+	"fields": {
+		"movieNm": "유부녀가 된 첫사랑",
+		"movieNmEn": "The first love partner is a fugitive",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200755",
+	"fields": {
+		"movieNm": "처형의 맛-무삭제판",
+		"movieNmEn": "Daughter-in-law's sister",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200304",
+	"fields": {
+		"movieNm": "테우리",
+		"movieNmEn": "Teuri",
+		"openDt": "20200709",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200703",
+	"fields": {
+		"movieNm": "극장판 귀멸의 칼날: 무한열차편",
+		"movieNmEn": "Demon Slayer: Kimetsu no Yaiba the Movie - Mugen Train",
+		"openDt": "",
+		"repGenreNm": "애니메이션"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20208961",
+	"fields": {
+		"movieNm": "마리 퀴리",
+		"movieNmEn": "RADIOACTIVE",
+		"openDt": "20201118",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20205144",
+	"fields": {
+		"movieNm": "미나리",
+		"movieNmEn": "Minari",
+		"openDt": "",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20200645",
+	"fields": {
+		"movieNm": "얼론",
+		"movieNmEn": "Alone",
+		"openDt": "",
+		"repGenreNm": "액션"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20204098",
+	"fields": {
+		"movieNm": "안티고네",
+		"movieNmEn": "Antigone",
+		"openDt": "20201119",
+		"repGenreNm": "드라마"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20208810",
+	"fields": {
+		"movieNm": "터키쉬 아이스크림",
+		"movieNmEn": "Turkish Ice-Cream",
+		"openDt": "20201112",
+		"repGenreNm": "코미디"
+	}
+}{
+	"model": "movies.movie",
+	"pk": "20209859",
+	"fields": {
+		"movieNm": "불륜의 세계 무삭제판",
+		"movieNmEn": "",
+		"openDt": "",
+		"repGenreNm": "성인물(에로)"
+	}
+}
