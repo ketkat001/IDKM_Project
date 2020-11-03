@@ -1,8 +1,9 @@
 # frontend
 
-## Project setup
+## get started
 ```
-npm install
+$ npm install # to install related libraries
+$ npm run serve # run
 ```
 
 ### Compiles and hot-reloads for development
@@ -15,10 +16,9 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+### SCSS
+https://vue-loader.vuejs.org/guide/pre-processors.html#sharing-global-variables
+
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

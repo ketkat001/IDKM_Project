@@ -1,0 +1,42 @@
+@charset "UTF-8";
+@import "@/assets/css/properties.scss";
+
+#nav {
+  margin: 0;
+  padding: 0;
+  height: 60px;
+  outline: none;
+  background-color: $color-2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.1s all ease-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+    
+  .logo {
+    width: 100px;
+  }
+  .nav-list {
+    a {
+      margin: 0;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: $color-4;
+      text-decoration: none;
+    }
+  
+    a.router-link-exact-active {
+      color: $color-3;
+    }
+  }
+}
+  
+.navbar--hidden {
+  transform: translate3d(0, -100%, 0);
+}
