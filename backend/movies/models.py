@@ -19,7 +19,7 @@ class Movie(models.Model):
     adult = models.BooleanField()
     runningtime = models.TimeField()  # 상영시간 time필드 맞는지 확인좀
     vote_average = models.FloatField(max_length=11)
-    rating = models.FloatField(max_length=11, default=null)
+    rating = models.FloatField(max_length=11)
     genres = models.ManyToManyField(Genre, related_name='movie_genre')
     overview_tags = models.ManyToManyField(Overview_tag, related_name='overview_tag')
     movie_casts = models.ManyToManyField(Movie_cast, related_name='movie_cast')

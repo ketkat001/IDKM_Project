@@ -13,7 +13,6 @@ from .serializers import MovieSerializer
 class MovieListAPI(GenericAPIView):
     serializer_class = MovieSerializer
     queryset = Movie.objects.all()
-    print(queryset)
     pagination_class = CustomPagination
     
 

@@ -40,9 +40,15 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'rest_auth.registration',
     'accounts',
     'rest_framework',
+    'rest_framework_swagger',
+    'rest_framework.authtoken',
+    'rest_auth',
     'movies',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.kakao',
 ]
 
 MIDDLEWARE = [
@@ -68,6 +74,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.request',
             ],
         },
     },
@@ -98,7 +105,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'DKM',
         'USER': 'root',
-        'PASSWORD': '1234',
+        'PASSWORD': 'ssafy',
         'PORT': '3306',
         'HOST': '127.0.0.1',
     }
@@ -149,16 +156,56 @@ AUTH_USER_MODEL = "accounts.User"
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'backend.pagination.CustomPagination',
-    # 'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',),
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+    #카카오 구현시 추가
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+    ],
 }
 
 SITE_ID = 1
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
-ACCOUNT_SESSION_REMEMBER = True
+# ACCOUNT_EMAIL_REQUIRED = True
+# ACCOUNT_USERNAME_REQUIRED = False
+# ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+# ACCOUNT_SESSION_REMEMBER = True
+# ACCOUNT_AUTHENTICATION_METHOD = 'email'
+# ACCOUNT_UNIQUE_EMAIL = True
+
+
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = True
+
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    },
+    'kakao': {
+        'APP': {
+            'client_id': '7cb4634d83b289fe68c7f8d78f4ac89f',
+            'secret': 499848,
+            'key': ''
+        }
+    }
+}
+
+
+
+LOGIN_REDIRECT_URL = '/' # 로그인 후 돌아올 URL  
+ACCOUNT_LOGOUT_REDIRECT_URL = "/accounts/login/"
+ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = True
+ACCOUNT_AUTHENTICATED_LOGOUT_REDIRECTS = True
