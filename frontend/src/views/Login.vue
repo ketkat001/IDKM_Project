@@ -45,10 +45,7 @@ export default {
   name: "Login",
   computed: {
     hasAllProperties() {
-      return Boolean(
-        this.loginData.userid &&
-        this.loginData.password
-      )
+      return !!this.loginData.userid && !!this.loginData.password
     }
   },
   methods: {
