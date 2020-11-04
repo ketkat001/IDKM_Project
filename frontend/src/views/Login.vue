@@ -55,7 +55,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions(["login"]),
+    ...mapActions("accounts", ["login"]),
   },
   data() {
     return {
