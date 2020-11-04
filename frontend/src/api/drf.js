@@ -3,8 +3,8 @@ export default {
   R: {
     ACCOUNTS: {
       login: '/accounts/auth/login/',
-      logout: '/accounts/logout/',
-      signup: '/accounts/signup/'
+      logout: '/rest-auth/logout/',
+      signup: '/accounts/auth/register/'
     }
   }
 }

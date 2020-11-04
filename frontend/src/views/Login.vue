@@ -6,7 +6,7 @@
         <label for="login-id">아이디</label>
         <input
           type="text"
-          v-model.trim="loginData.userid"
+          v-model.trim="loginData.email"
           name="login-id"
           placeholder="아이디를 입력하세요"
           required="아이디를 입력해 주세요."
@@ -51,7 +51,7 @@ export default {
   name: "Login",
   computed: {
     hasAllProperties() {
-      return Boolean(this.loginData.userid && this.loginData.password);
+      return Boolean(this.loginData.email && this.loginData.password);
     },
   },
   methods: {
@@ -60,7 +60,7 @@ export default {
   data() {
     return {
       loginData: {
-        login: "",
+        email: "",
         password: "",
       },
     };

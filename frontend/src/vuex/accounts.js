@@ -18,13 +18,14 @@ export default {
     }
   },
   actions: {
-    postAuthData({ commit }, info){
+    postAuthData({ commit }, info) {
+      console.log(info.data)
       axios.post(info.location, info.data)
-      .then(res => {
-        console.log(res)
-        commit("SET_TOKEN", res.data.token)
-      })
-      .catch(err => console.log(err))
+        .then(res => {
+          console.log(res)
+          commit("SET_TOKEN", res.data.token)
+        })
+        .catch(err => console.log(err))
     },
     signup({ dispatch }, signupData) {
       const info = {
