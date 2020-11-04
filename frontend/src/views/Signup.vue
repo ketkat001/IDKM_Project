@@ -94,7 +94,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["signup"])
+    ...mapActions("accounts", ["signup"])
   },
   data() {
     return {
