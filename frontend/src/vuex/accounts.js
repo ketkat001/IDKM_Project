@@ -1,6 +1,7 @@
 import axios from "axios"
 import SERVER from "@/api/drf.js"
 import cookies from "vue-cookies"
+import router from "../routes"
 
 export default {
   namespaced: true,
@@ -23,6 +24,7 @@ export default {
       .then(res => {
         console.log(res)
         commit("SET_TOKEN", res.data.token)
+        router.push({ name: 'Home' })
       })
       .catch(err => console.log(err))
     },
