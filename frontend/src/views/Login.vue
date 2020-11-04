@@ -16,14 +16,20 @@
         <label for="login-password">비밀번호</label>
         <input
           type="password"
-          v-model.trim="loginData.password"          
+          v-model.trim="loginData.password"
           name="login-password"
           placeholder="비밀번호를 입력하세요"
           required="비밀번호를 입력해 주세요."
+          @keypress.enter="login(loginData)"
         />
       </div>
       <div class="submit-box">
-        <input type="submit" value="로그인하기" :disabled="!hasAllProperties" @click="login(loginData)" />
+        <input
+          type="submit"
+          value="로그인하기"
+          :disabled="!hasAllProperties"
+          @click="login(loginData)"
+        />
         <span v-show="!hasAllProperties" class="warning-message"
           >아이디 또는 비밀번호를 입력해주세요!</span
         >
@@ -39,25 +45,22 @@
 
 <script>
 import "@/assets/css/views/login.scss";
-import { mapActions } from "vuex"
+import { mapActions } from "vuex";
 
 export default {
   name: "Login",
   computed: {
     hasAllProperties() {
-      return Boolean(
-        this.loginData.userid &&
-        this.loginData.password
-      )
-    }
+      return Boolean(this.loginData.userid && this.loginData.password);
+    },
   },
   methods: {
-    ...mapActions(["login"])
+    ...mapActions(["login"]),
   },
   data() {
     return {
       loginData: {
-        userid: "",
+        login: "",
         password: "",
       },
     };
