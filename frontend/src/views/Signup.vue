@@ -4,7 +4,7 @@
       <h2>우리 사이트에 처음 오셨군요!</h2>
       <div class="input-box">
         <label for="signup-email"
-          >이메일<span v-show="!isEmailEmpty" class="warning-message"
+          >이메일<span v-show="isEmailEmpty" class="warning-message"
             >이메일을 입력해주세요!!</span
           ></label
         >
@@ -20,13 +20,13 @@
       <div class="input-box">
         <label for="signup-password"
           >비밀번호
-          <span v-show="!isPasswordMatch" class="warning-message"
+          <span v-show="isPasswordEmpty" class="warning-message"
             >비밀번호를 입력해 주세요!</span
           >
         </label>
         <input
           type="password"
-          v-model.lazy.trim="signupData.password"
+          v-model.trim="signupData.password"
           name="signup-password"
           placeholder="비밀번호를 입력하세요"
           @focus="passwordFlag = true"
@@ -50,7 +50,7 @@
       </div>
       <div class="input-box">
         <label for="signup-username"
-          >이름<span v-show="!isUsernameEmpty" class="warning-message"
+          >이름<span v-show="isUsernameEmpty" class="warning-message"
             >이름을 입력해 주세요!</span
           ></label
         >
@@ -90,23 +90,26 @@ export default {
   },
   computed: {
     isEmailEmpty() {
-      return this.emailFlag && !!this.signupData.email;
+      return this.emailFlag && !this.signupData.email;
     },
     isUsernameEmpty() {
-      return this.usernameFlag && !!this.signupData.username;
+      return this.usernameFlag && !this.signupData.username;
     },
     isPasswordEmpty() {
-      return !this.signupData.password;
+      return this.passwordFlag && !this.signupData.password;
     },
     isPasswordMatch() {
       return this.passwordCheck === this.signupData.password;
     },
     hasAllProperty() {
       return Boolean(
-        this.signupData.username !== "" &&
-          this.signupData.password !== "" &&
-          this.signupData.email !== "" &&
-          this.isPasswordMatch
+        !this.isEmailEmpty &&
+        !this.isPasswordEmpty &&
+        !this.isUsernameEmpty &&
+        this.isPasswordMatch &&
+        this.emailFlag &&
+        this.passwordFlag &&
+        this.usernameFlag
       );
     },
   },
