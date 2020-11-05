@@ -4,8 +4,8 @@
       <h2>우리 사이트에 처음 오셨군요!</h2>
       <div class="input-box">
         <label for="signup-email"
-          >이메일<span v-show="isEmailEmpty" class="warning-message"
-            >이메일을 입력해주세요!!</span
+          >이메일<span v-show="!isEmailValid" class="warning-message"
+            >이메일 형식이 올바르지 않습니다!</span
           ></label
         >
         <input
@@ -89,8 +89,10 @@ export default {
     // email, id, password RegExp needed
   },
   computed: {
-    isEmailEmpty() {
-      return this.emailFlag && !this.signupData.email;
+    isEmailValid() {
+      const email = this.signupData.email
+      const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return this.emailFlag? pattern.test(email): true;
     },
     isUsernameEmpty() {
       return this.usernameFlag && !this.signupData.username;
@@ -103,10 +105,10 @@ export default {
     },
     hasAllProperty() {
       return Boolean(
-        !this.isEmailEmpty &&
         !this.isPasswordEmpty &&
         !this.isUsernameEmpty &&
         this.isPasswordMatch &&
+        this.isEmailValid &&
         this.emailFlag &&
         this.passwordFlag &&
         this.usernameFlag
