@@ -7,24 +7,24 @@ from django.contrib.auth import authenticate
 class CreateUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('email', 'username', 'password', 'profile_image')
-        # fields = ('email', 'nickname', 'password', 'profile_image')
+        # fields = ('email', 'username', 'password', 'profile_image')
+        fields = ('email', 'nickname', 'password', 'profile_image')
         extra_kwargs = {'password': {'write_only': True}}
     
     def create(self, validated_data):
         user = User.objects.create_user(
-            validated_data['email'], validated_data['username'], validated_data['password']
+            validated_data['email'], validated_data['nickname'], validated_data['password']
         )
         return user
 
 
 class UserSerializer(serializers.ModelSerializer):
     email = serializers.EmailField()
-    username = serializers.CharField()
+    nickname = serializers.CharField()
     class Meta:
         model = User
-        fields = ('id', 'email', 'username', 'profile_image')
-        # fields = ('id', 'email', 'nickname', 'profile_image')
+        # fields = ('id', 'email', 'username', 'profile_image')
+        fields = ('id', 'email', 'nickname', 'profile_image')
 
 
 
@@ -37,10 +37,14 @@ class LoginUserSerializer(serializers.ModelSerializer):
         fields = ('email', 'password')
     
     def validate(self, data):
-        print(data)
         user = authenticate(**data)
-        print(user)
         if user and user.is_active:
             return user
         raise serializers.ValidationError("Unable to login with provided credentials.")
 
+
+# 유저상세
+class UserDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('nickname', 'password', 'profile_image')
