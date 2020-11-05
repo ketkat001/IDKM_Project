@@ -154,7 +154,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_NICKNAME_REQUIRED = True
 
 LOGIN_REDIRECT_URL = '/' # 로그인 후 돌아올 URL  
 ACCOUNT_LOGOUT_REDIRECT_URL = "/accounts/login/"
