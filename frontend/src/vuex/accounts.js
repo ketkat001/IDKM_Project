@@ -19,7 +19,8 @@ export default {
     }
   },
   actions: {
-    postAuthData({ commit }, info){
+    postAuthData({ commit }, info) {
+      console.log(info.data)
       axios.post(info.location, info.data)
       .then(res => {
         console.log(res)
