@@ -2,6 +2,7 @@
   <div class="signup-page">
     <div class="signup-box">
       <h2>우리 사이트에 처음 오셨군요!</h2>
+      <!-- email block -->
       <div class="input-box">
         <label for="signup-email"
           >이메일<span v-show="!isEmailValid" class="warning-message"
@@ -17,6 +18,23 @@
           @focus="emailFlag = true"
         />
       </div>
+      <!-- nickname block -->
+      <div class="input-box">
+        <label for="signup-nickname"
+          >닉네임<span v-show="isNicknameEmpty" class="warning-message"
+            >닉네임을 입력해주세요</span
+          ></label
+        >
+        <input
+          type="text"
+          v-model="signupData.nickname"
+          name="signup-nickname"
+          placeholder="홈페이지에서 사용될 닉네임을 입력하세요"
+          required="네임을 입력해 주세요."
+          @focus="nicknameFlag = true"
+        />
+      </div>
+      <!-- password block -->
       <div class="input-box">
         <label for="signup-password"
           >비밀번호
@@ -33,6 +51,7 @@
           required="비밀번호를 입력해 주세요."
         />
       </div>
+      <!-- password check block -->
       <div class="input-box">
         <label for="signup-password-again"
           >비밀번호 확인
@@ -48,22 +67,7 @@
           required="비밀번호를 한번 더 입력하셔야 합니다."
         />
       </div>
-      <div class="input-box">
-        <label for="signup-username"
-          >이름<span v-show="isUsernameEmpty" class="warning-message"
-            >이름을 입력해 주세요!</span
-          ></label
-        >
-        <input
-          type="text"
-          v-model="signupData.username"
-          name="signup-username"
-          placeholder="이름을 입력하세요"
-          required="이메일을 입력해 주세요."
-          @focus="usernameFlag = true"
-        />
-      </div>
-
+      <!-- signup button -->
       <div class="submit-box">
         <input
           type="submit"
@@ -94,8 +98,8 @@ export default {
       const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return this.emailFlag? pattern.test(email): true;
     },
-    isUsernameEmpty() {
-      return this.usernameFlag && !this.signupData.username;
+    isNicknameEmpty() {
+      return this.nicknameFlag && !this.signupData.nickname;
     },
     isPasswordEmpty() {
       return this.passwordFlag && !this.signupData.password;
@@ -106,12 +110,12 @@ export default {
     hasAllProperty() {
       return Boolean(
         !this.isPasswordEmpty &&
-        !this.isUsernameEmpty &&
+        !this.isNicknameEmpty &&
         this.isPasswordMatch &&
         this.isEmailValid &&
         this.emailFlag &&
         this.passwordFlag &&
-        this.usernameFlag
+        this.nicknameFlag
       );
     },
   },
@@ -122,10 +126,10 @@ export default {
     return {
       emailFlag: false,
       passwordFlag: false,
-      usernameFlag: false,
+      nicknameFlag: false,
       passwordCheck: "",
       signupData: {
-        username: "",
+        nickname: "",
         password: "",
         email: "",
       },
