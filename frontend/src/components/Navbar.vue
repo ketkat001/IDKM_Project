@@ -11,13 +11,15 @@
     <div class="nav-list">
       <router-link :to="{ name: 'Home' }">Home</router-link>
       <router-link :to="{ name: 'Movies' }">Movies</router-link>
-      <router-link :to="{ name: 'Login' }">Login</router-link>
+      <router-link v-show="!islogin" :to="{ name: 'Login' }">Login</router-link>
+      <router-link v-show="islogin" :to="{ name: 'Home' }">Logout</router-link>
     </div>
   </div>
 </template>
 
 <script>
 import "@/assets/css/components/navbar.scss";
+import { mapGetters } from "vuex"
 
 export default {
   name: "Navbar",
@@ -27,6 +29,9 @@ export default {
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.onScroll)
+  },
+  computed: {
+    ...mapGetters(["islogin"])
   },
   methods: {
     onScroll() {

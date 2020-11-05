@@ -1,6 +1,7 @@
 import axios from "axios"
 import SERVER from "@/api/drf.js"
 import cookies from "vue-cookies"
+import router from "../routes"
 
 export default {
   namespaced: true,
@@ -21,11 +22,12 @@ export default {
     postAuthData({ commit }, info) {
       console.log(info.data)
       axios.post(info.location, info.data)
-        .then(res => {
-          console.log(res)
-          commit("SET_TOKEN", res.data.token)
-        })
-        .catch(err => console.log(err))
+      .then(res => {
+        console.log(res)
+        commit("SET_TOKEN", res.data.token)
+        router.push({ name: 'Home' })
+      })
+      .catch(err => console.log(err))
     },
     signup({ dispatch }, signupData) {
       const info = {

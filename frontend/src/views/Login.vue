@@ -51,8 +51,8 @@ export default {
   name: "Login",
   computed: {
     hasAllProperties() {
-      return Boolean(this.loginData.email && this.loginData.password);
-    },
+      return !!this.loginData.userid && !!this.loginData.password
+    }
   },
   methods: {
     ...mapActions("accounts", ["login"]),
