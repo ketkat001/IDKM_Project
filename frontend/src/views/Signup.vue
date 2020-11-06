@@ -4,11 +4,18 @@
       <h2>우리 사이트에 처음 오셨군요!</h2>
       <!-- email block -->
       <div class="input-box">
-        <label for="signup-email"
-          >이메일<span v-show="!isEmailValid" class="warning-message"
-            >이메일 형식이 올바르지 않습니다!</span
-          ></label
-        >
+        <div class="validate-label">
+          <div>
+            <label for="signup-email">
+              이메일<span v-show="!isEmailValid" class="warning-message"
+                >이메일 형식이 올바르지 않습니다!</span
+              >
+            </label>
+          </div>
+          <div>
+            <v-btn elevation="2" color="amber">이메일 인증</v-btn>
+          </div>
+        </div>
         <input
           type="email"
           v-model="signupData.email"
@@ -20,11 +27,19 @@
       </div>
       <!-- nickname block -->
       <div class="input-box">
-        <label for="signup-nickname"
-          >닉네임<span v-show="isNicknameEmpty" class="warning-message"
-            >닉네임을 입력해주세요</span
-          ></label
-        >
+        <div class="validate-label">
+          <div>
+            <label for="signup-nickname"
+              >닉네임<span v-show="isNicknameEmpty" class="warning-message"
+                >닉네임을 입력해주세요</span
+              ></label
+            >
+          </div>
+          <div>
+            <v-btn elevation="2" color="amber">닉네임 인증</v-btn>
+          </div>
+        </div>
+
         <input
           type="text"
           v-model="signupData.nickname"
@@ -94,9 +109,9 @@ export default {
   },
   computed: {
     isEmailValid() {
-      const email = this.signupData.email
+      const email = this.signupData.email;
       const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return this.emailFlag? pattern.test(email): true;
+      return this.emailFlag ? pattern.test(email) : true;
     },
     isNicknameEmpty() {
       return this.nicknameFlag && !this.signupData.nickname;
@@ -110,12 +125,12 @@ export default {
     hasAllProperty() {
       return Boolean(
         !this.isPasswordEmpty &&
-        !this.isNicknameEmpty &&
-        this.isPasswordMatch &&
-        this.isEmailValid &&
-        this.emailFlag &&
-        this.passwordFlag &&
-        this.nicknameFlag
+          !this.isNicknameEmpty &&
+          this.isPasswordMatch &&
+          this.isEmailValid &&
+          this.emailFlag &&
+          this.passwordFlag &&
+          this.nicknameFlag
       );
     },
   },
