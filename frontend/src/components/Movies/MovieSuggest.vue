@@ -1,8 +1,8 @@
 <template>
   <div class="movie-suggest">
     <h1>그리고 당신을 위한 더 많은 영화가 있답니다!</h1>
-    <div class="suggest-cards">
-      <MovieCard v-for="card in cardList" :key="card.id" :card="card" />
+    <div class="suggest-cards row">
+      <MovieCard class="col-3" v-for="card in cardList" :key="card.id" :card="card" />
     </div>
   </div>
 </template>
