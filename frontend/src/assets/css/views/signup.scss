@@ -21,7 +21,7 @@
   align-items: center;
   border-radius: 10px;
   text-align: left;
-  
+
   h2 {
     margin: 10px auto 20px auto;
   }
@@ -29,10 +29,11 @@
 
 .input-box {
   width: 80%;
-  
+
   label {
     display: block;
     margin: 5px 20px;
+    font-size: 1.1rem;
   }
 
   input {
@@ -43,8 +44,13 @@
     height: 25%;
     width: 100%;
     outline: none;
-    color:$color-1;
+    color: $color-1;
     border-radius: 10px;
+  }
+
+  .validate-label {
+    display: flex;
+    justify-content: space-between;
   }
 }
 
@@ -75,4 +81,9 @@
 .warning-message {
   font-size: 0.8rem;
   color: $color-3;
+}
+
+.email-validate {
+  display: inline-block;
+  margin-left: auto;
 }

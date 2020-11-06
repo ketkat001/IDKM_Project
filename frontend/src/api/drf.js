@@ -4,7 +4,8 @@ export default {
     ACCOUNTS: {
       login: '/accounts/auth/login/',
       logout: '/rest-auth/logout/',
-      signup: '/accounts/auth/register/'
+      signup: '/accounts/auth/register/',
+      check: '/accounts/check/'
     }
   }
 }

@@ -4,11 +4,24 @@
       <h2>우리 사이트에 처음 오셨군요!</h2>
       <!-- email block -->
       <div class="input-box">
-        <label for="signup-email"
-          >이메일<span v-show="!isEmailValid" class="warning-message"
-            >이메일 형식이 올바르지 않습니다!</span
-          ></label
-        >
+        <div class="validate-label">
+          <div>
+            <label for="signup-email">
+              이메일<span v-show="!isEmailValid" class="warning-message"
+                >이메일 형식이 올바르지 않습니다!</span
+              >
+            </label>
+          </div>
+          <div>
+            <v-btn
+              elevation="2"
+              color="amber"
+              :disabled="!emailFlag || !isEmailValid"
+              @click="validateEmail"
+              >이메일 인증</v-btn
+            >
+          </div>
+        </div>
         <input
           type="email"
           v-model="signupData.email"
@@ -20,11 +33,25 @@
       </div>
       <!-- nickname block -->
       <div class="input-box">
-        <label for="signup-nickname"
-          >닉네임<span v-show="isNicknameEmpty" class="warning-message"
-            >닉네임을 입력해주세요</span
-          ></label
-        >
+        <div class="validate-label">
+          <div>
+            <label for="signup-nickname"
+              >닉네임<span v-show="isNicknameEmpty" class="warning-message"
+                >닉네임을 입력해주세요</span
+              ></label
+            >
+          </div>
+          <div>
+            <v-btn
+              elevation="2"
+              color="amber"
+              :disabled="!nicknameFlag || isNicknameEmpty"
+              @click="validateNickname"
+              >닉네임 인증</v-btn
+            >
+          </div>
+        </div>
+
         <input
           type="text"
           v-model="signupData.nickname"
@@ -84,6 +111,8 @@
 </template>
 
 <script>
+import axios from "axios";
+import SERVER from "@/api/drf.js";
 import "@/assets/css/views/signup.scss";
 import { mapActions } from "vuex";
 
@@ -94,9 +123,9 @@ export default {
   },
   computed: {
     isEmailValid() {
-      const email = this.signupData.email
+      const email = this.signupData.email;
       const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return this.emailFlag? pattern.test(email): true;
+      return this.emailFlag ? pattern.test(email) : true;
     },
     isNicknameEmpty() {
       return this.nicknameFlag && !this.signupData.nickname;
@@ -108,7 +137,7 @@ export default {
       return this.passwordCheck === this.signupData.password;
     },
     hasAllProperty() {
-      return Boolean(
+      return (
         !this.isPasswordEmpty &&
         !this.isNicknameEmpty &&
         this.isPasswordMatch &&
@@ -121,6 +150,34 @@ export default {
   },
   methods: {
     ...mapActions("accounts", ["signup"]),
+    validateEmail() {
+      // console.log(email, "will be validated");
+      const email = this.signupData.email;
+      const URL = SERVER.URL + SERVER.R.ACCOUNTS.check;
+      axios.post(URL, { "email": email })
+        .then(res => {
+          if (res === true) {
+            alert("사용 가능한 이메일 입니다!")
+          } else { 
+            alert("오우.. 이미 누가 사용중인가봐요.. ㅜㅜ")
+          }
+        })
+        .catch(err => console.log(err))
+    },
+    validateNickname() {
+      // console.log(nickname, "will be validated");
+      const nickname = this.signupData.nickname;
+      const URL = SERVER.URL + SERVER.R.ACCOUNTS.check;
+      axios.post(URL, { "nickname": nickname })
+        .then(res => {
+          if (res === true) {
+            alert("사용 가능한 이메일 입니다!")
+          } else { 
+            alert("오우.. 이미 누가 사용중인가봐요.. ㅜㅜ")
+          }
+        })
+        .catch(err => console.log(err))
+    },
   },
   data() {
     return {
