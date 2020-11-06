@@ -16,7 +16,7 @@
             <v-btn
               elevation="2"
               color="amber"
-              :disabled="!isEmailValid"
+              :disabled="!emailFlag || !isEmailValid"
               @click="validateEmail"
               >이메일 인증</v-btn
             >
@@ -45,7 +45,7 @@
             <v-btn
               elevation="2"
               color="amber"
-              :disabled="isNicknameEmpty"
+              :disabled="!nicknameFlag || isNicknameEmpty"
               @click="validateNickname"
               >닉네임 인증</v-btn
             >
