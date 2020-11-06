@@ -13,7 +13,11 @@
             </label>
           </div>
           <div>
-            <v-btn elevation="2" color="amber" :disabled="!isEmailValid" @click="validateEmail"
+            <v-btn
+              elevation="2"
+              color="amber"
+              :disabled="!isEmailValid"
+              @click="validateEmail"
               >이메일 인증</v-btn
             >
           </div>
@@ -38,7 +42,11 @@
             >
           </div>
           <div>
-            <v-btn elevation="2" color="amber" :disabled="isNicknameEmpty" @click="validateNickname"
+            <v-btn
+              elevation="2"
+              color="amber"
+              :disabled="isNicknameEmpty"
+              @click="validateNickname"
               >닉네임 인증</v-btn
             >
           </div>
@@ -135,18 +143,18 @@ export default {
         this.emailFlag &&
         this.passwordFlag &&
         this.nicknameFlag
-      )
+      );
     },
   },
   methods: {
     ...mapActions("accounts", ["signup"]),
     validateEmail() {
       const email = this.signupData.email;
-      console.log(email, 'will be validated')
+      console.log(email, "will be validated");
     },
     validateNickname() {
       const nickname = this.signupData.nickname;
-      console.log(nickname, 'will be validated')
+      console.log(nickname, "will be validated");
     },
   },
   data() {
