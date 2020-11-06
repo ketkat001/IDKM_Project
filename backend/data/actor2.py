@@ -12,8 +12,9 @@ from collections import OrderedDict
 # A = OrderedDict()
 
 # for j in json_data:
+#     print(j)
 #     pk = j['pk']
-#     name = j['fields']['name']
+#     name = j['fields']['movie_actors']
 #     A[name] = str(pk)
 # with open('KMDB_actor_pk.json', 'w', encoding="utf-8") as make_file:
 #     json.dump(A, make_file, ensure_ascii=False, indent="\t")
