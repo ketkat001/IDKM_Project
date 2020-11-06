@@ -13,7 +13,9 @@
             </label>
           </div>
           <div>
-            <v-btn elevation="2" color="amber">이메일 인증</v-btn>
+            <v-btn elevation="2" color="amber" :disabled="!isEmailValid" @click="validateEmail"
+              >이메일 인증</v-btn
+            >
           </div>
         </div>
         <input
@@ -36,7 +38,9 @@
             >
           </div>
           <div>
-            <v-btn elevation="2" color="amber">닉네임 인증</v-btn>
+            <v-btn elevation="2" color="amber" :disabled="isNicknameEmpty" @click="validateNickname"
+              >닉네임 인증</v-btn
+            >
           </div>
         </div>
 
@@ -123,19 +127,27 @@ export default {
       return this.passwordCheck === this.signupData.password;
     },
     hasAllProperty() {
-      return Boolean(
+      return (
         !this.isPasswordEmpty &&
-          !this.isNicknameEmpty &&
-          this.isPasswordMatch &&
-          this.isEmailValid &&
-          this.emailFlag &&
-          this.passwordFlag &&
-          this.nicknameFlag
-      );
+        !this.isNicknameEmpty &&
+        this.isPasswordMatch &&
+        this.isEmailValid &&
+        this.emailFlag &&
+        this.passwordFlag &&
+        this.nicknameFlag
+      )
     },
   },
   methods: {
     ...mapActions("accounts", ["signup"]),
+    validateEmail() {
+      const email = this.signupData.email;
+      console.log(email, 'will be validated')
+    },
+    validateNickname() {
+      const nickname = this.signupData.nickname;
+      console.log(nickname, 'will be validated')
+    },
   },
   data() {
     return {
