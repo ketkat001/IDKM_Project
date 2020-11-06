@@ -19,6 +19,5 @@ export default {
     MovieSearch,
     MovieSuggest
   }
-
 }
 </script>

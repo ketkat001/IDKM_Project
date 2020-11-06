@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate
 class CreateUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        # fields = ('email', 'username', 'nickname', 'password', 'profile_image')
+        # fields = ('email', 'username', 'password', 'profile_image')
         fields = ('email', 'nickname', 'password', 'profile_image')
         extra_kwargs = {'password': {'write_only': True}}
     
@@ -20,11 +20,11 @@ class CreateUserSerializer(serializers.ModelSerializer):
 
 class UserSerializer(serializers.ModelSerializer):
     email = serializers.EmailField()
-    username = serializers.CharField()
+    nickname = serializers.CharField()
     class Meta:
         model = User
-        fields = ('id', 'email', 'username', 'profile_image')
-        # fields = ('id', 'email', 'nickname', 'profile_image')
+        # fields = ('id', 'email', 'username', 'profile_image')
+        fields = ('id', 'email', 'nickname', 'profile_image')
 
 
 
@@ -38,8 +38,13 @@ class LoginUserSerializer(serializers.ModelSerializer):
     
     def validate(self, data):
         user = authenticate(**data)
-        print(user)
         if user and user.is_active:
             return user
         raise serializers.ValidationError("Unable to login with provided credentials.")
 
+
+# 유저상세
+class UserDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('nickname', 'password', 'profile_image')
