@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Movie, Genre, Overview_tag, Movie_cast
+from .models import Movie, Movie_cast
 from rest_framework import generics, permissions
 from rest_framework.generics import get_object_or_404, GenericAPIView
 from rest_framework.response import Response
