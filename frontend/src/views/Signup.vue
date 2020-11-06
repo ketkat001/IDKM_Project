@@ -111,6 +111,8 @@
 </template>
 
 <script>
+import axios from "axios";
+import SERVER from "@/api/drf.js";
 import "@/assets/css/views/signup.scss";
 import { mapActions } from "vuex";
 
@@ -149,12 +151,32 @@ export default {
   methods: {
     ...mapActions("accounts", ["signup"]),
     validateEmail() {
+      // console.log(email, "will be validated");
       const email = this.signupData.email;
-      console.log(email, "will be validated");
+      const URL = SERVER.URL + SERVER.R.ACCOUNTS.check;
+      axios.post(URL, { "email": email })
+        .then(res => {
+          if (res === true) {
+            alert("사용 가능한 이메일 입니다!")
+          } else { 
+            alert("오우.. 이미 누가 사용중인가봐요.. ㅜㅜ")
+          }
+        })
+        .catch(err => console.log(err))
     },
     validateNickname() {
+      // console.log(nickname, "will be validated");
       const nickname = this.signupData.nickname;
-      console.log(nickname, "will be validated");
+      const URL = SERVER.URL + SERVER.R.ACCOUNTS.check;
+      axios.post(URL, { "nickname": nickname })
+        .then(res => {
+          if (res === true) {
+            alert("사용 가능한 이메일 입니다!")
+          } else { 
+            alert("오우.. 이미 누가 사용중인가봐요.. ㅜㅜ")
+          }
+        })
+        .catch(err => console.log(err))
     },
   },
   data() {
