@@ -9,18 +9,22 @@ class Overview_tag(models.Model):
     tags = models.CharField(max_length=255)
 
 class Movie_cast(models.Model):
-    actors = models.CharField(max_length=255)
+    movie_actors = models.CharField(max_length=255, null=True)
+    # actors_name으로 변경해야됨
 
 class Movie(models.Model):
-    title = models.CharField(max_length=255)
-    overview = models.CharField(max_length=255)
-    poster_url = models.URLField()
-    release_date = models.DateTimeField()
-    adult = models.BooleanField()
-    runningtime = models.TimeField()  # 상영시간 time필드 맞는지 확인좀
-    vote_average = models.FloatField(max_length=11)
-    rating = models.FloatField(max_length=11)
-    genres = models.ManyToManyField(Genre, related_name='movie_genre')
-    overview_tags = models.ManyToManyField(Overview_tag, related_name='overview_tag')
-    movie_casts = models.ManyToManyField(Movie_cast, related_name='movie_cast')
+    title = models.CharField(max_length=255) 
+    overview = models.TextField() 
+    # poster_url = models.URLField()
+    release_date = models.CharField(max_length = 30, null = True)
+    runningtime = models.CharField(max_length = 10, null = True)  # 상영시간 time필드 맞는지 확인좀
+    # vote_average = models.FloatField(max_length=11, null=False, blank=True)
+    rating = models.TextField()
+    genres = models.ManyToManyField(Genre, related_name='movie_genre', null=True)
+    overview_tags = models.ManyToManyField(Overview_tag, related_name='overview_tags', null=True)
+    actors = models.ManyToManyField(Movie_cast, related_name='movie_casts', blank=True)
+    nation = models.CharField(max_length=255, null=True)
+    maker = models.CharField(max_length=255, null=True)
+    director = models.CharField(max_length=255, null=True)
+
 
