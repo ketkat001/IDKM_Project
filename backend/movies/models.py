@@ -13,7 +13,7 @@ class Movie_cast(models.Model):
 
 class Movie(models.Model):
     title = models.CharField(max_length=255) 
-    overview = models.CharField(max_length=255, null=True) 
+    overview = models.TextField(null=True) 
     # poster_url = models.URLField()
     release_date = models.CharField(max_length = 30, null = True)
     runningtime = models.CharField(max_length = 10, null = True)  # 상영시간 time필드 맞는지 확인좀
@@ -27,3 +27,28 @@ class Movie(models.Model):
     director = models.CharField(max_length=255, null=True)
 
 
+class User_Overview(models.Model):
+    overview_tags = models.ForeignKey(Overview_tag, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    weight = models.IntegerField(default=0)
+
+
+class User_Genre(models.Model):
+    genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    weight = models.IntegerField(default=0)
+
+
+class User_Movie_cast(models.Model):
+    movie_cast = models.ForeignKey(Movie_cast, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    weight = models.IntegerField(default=0)
+
+
+class Movie_rating(models.Model):
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    rating = models.IntegerField(null=True)
+
+
+    

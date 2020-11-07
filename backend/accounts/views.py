@@ -80,9 +80,9 @@ class UserDetailAPI(generics.GenericAPIView):
 class CheckAPI(generics.GenericAPIView):
     serializer_class = UserSerializer
     queryset = User.objects.all()
-    def emailcheck(self, request, check):
+    def post(self, request):
         # email = request.check
-        if User.objects.filter(nickname=check).exists() or User.objects.filter(email=check).exists():
+        if User.objects.filter(nickname=request.data['nickname']).exists() or User.objects.filter(email=request.data['email']).exists():
             return Response(False)
         else:
             return Response(True)
