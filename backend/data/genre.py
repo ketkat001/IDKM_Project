@@ -13,7 +13,7 @@ startCount = 0
 A = []
 genre_list = []
 with open('KMDB_genre.json', 'w', encoding="utf-8") as make_file:
-    while startCount < 500:
+    while startCount < 1000:
         # url = f"http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&listCount=500&title={title}&detail=Y&ServiceKey=H4T135AW903C3067983L"
         url = f"http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&listCount=500&startCount={startCount}&detail=Y&ServiceKey=H4T135AW903C3067983L"
         request = ul.Request(url)
@@ -41,8 +41,9 @@ with open('KMDB_genre.json', 'w', encoding="utf-8") as make_file:
                         genre_list.append(genre)
                         file_data['model'] = "movies.genre"
                         file_data['pk'] = len(genre_list)
-                        file_data['fields'] = {"genre": genre}
+                        file_data['fields'] = {"name": genre}
                         A.append(file_data)
+    
         startCount += 500
     json.dump(A, make_file, ensure_ascii=False, indent="\t")
 
