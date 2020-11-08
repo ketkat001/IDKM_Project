@@ -23,12 +23,18 @@ for o in ovt:
     A1[tagnanme] = pkn
 
 for m in movie:
-    A = []
-    mactor = m['fields']['tagdatas']
-    if mactor != [""]:
-        for mc in mactor:
-            A.append(A1[mc])
-            m['fields']['tagdatas'] = A
+    if m['fields']['tagdatas'] == [""]:
+        m['fields']['tagdatas'] = []
+
+
+    # A = []
+    # mactor = m['fields']['tagdatas']
+    # if mactor != [""]:
+    #     for mc in mactor:
+    #         A.append(A1[mc])
+    #         m['fields']['tagdatas'] = A
+    # else:
+    #     m['fields']['tagdatas'] = []
 
 with open('KMDB_Moviefinal.json', 'w', encoding="utf-8") as make_file:
     json.dump(movie, make_file, ensure_ascii=False, indent="\t")
