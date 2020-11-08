@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 import Movies from './views/Movies.vue'
+import MovieDetail from './views/MovieDetail.vue'
 // vue-cookies 
 import cookies from "vue-cookies"
 // lazy-loading 
@@ -21,6 +22,12 @@ const routes = [
     name: 'Movies',
     component: Movies
   },
+  {
+    path: '/movie/:id',
+    name: 'MovieDetail',
+    component: MovieDetail
+  },
+
   {
     path: '/login',
     name: 'Login',
