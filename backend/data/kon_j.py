@@ -19,12 +19,12 @@ for m in movie:
     A = []
     overview = m['fields']['tagdatas']
     words= kkma.nouns(overview)
-    alltags.extend(words)
-    m['fields']['tagdatas'] = words
-    actor_l = m['fields']['actors']
+    actor_l = list(m['fields']['actors'].split(','))
     alltags.extend(actor_l)
     for act in actor_l:
         words.append(act)
+    m['fields']['tagdatas'] = words
+    alltags.extend(words)
     
 
 num = 1
