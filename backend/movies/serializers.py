@@ -1,11 +1,11 @@
 from rest_framework import serializers
-from .models import Movie_cast, Movie, Genre
+from .models import tagdatas, Movie
 
 
-class GenreSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Genre
-        fields = ('__all__')
+# class GenreSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Genre
+#         fields = ('__all__')
 
 
 # class Overview_tagSerializer(serializers.ModelSerializer):
@@ -13,9 +13,9 @@ class GenreSerializer(serializers.ModelSerializer):
 #         model = Overview_tag
 #         fields = ('__all__')
 
-class Movie_castSerializer(serializers.ModelSerializer):
+class tagdatasSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Movie_cast
+        model = tagdatas
         fields = ('__all__')
 
 
