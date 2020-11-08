@@ -1,0 +1,90 @@
+@charset "UTF-8";
+@import "@/assets/css/properties.scss";
+
+.movie-header {
+    float: left;
+    width: 100%;
+    height: 600px;
+    position: relative;
+}
+
+.movie-poster-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #895bff, #f1309a);
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    box-shadow: 0 0 70px 0 rgba(0, 0, 0, 0.5);
+}
+
+.movie-poster {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 100% 25%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.2;
+    background-image: url("https://cdn.vuetifyjs.com/images/cards/sunshine.jpg")
+}
+
+.movie-info-wrap {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+}
+
+.movie-info-content {
+    position: absolute;
+    bottom: 0;
+}
+
+.movie-info-content-wrap {
+    width: 100%;
+}
+
+.movie-info-item-data {
+    float: left;
+    margin: 0 0 40px 300px;
+}
+
+
+
+@media (max-width: 450px) {
+    .movie-header {
+        height: 650px;
+    }
+}
+
+@media (max-width: 740px) {
+    .movie-header {
+        height: 590px;
+    }
+
+    .movie-info-content {
+        width: 100%;
+    }
+
+    .movie-info-item-data {
+        clear: both;
+        margin: 30px 0 40px 0;
+    }
+}
+
+@media (max-width: 860px) {
+    .movie-header {
+        height: 500px;
+    }
+
+    .movie-info-item-data {
+        clear: both;
+        margin: 0 0 40px 230px;
+    }
+}
