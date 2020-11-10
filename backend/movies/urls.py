@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 
-from .views import MovieListAPI, MovieDetailAPI
+from .views import MovieListAPI, MovieDetailAPI, MoviesearchAPI
 
 # urlpatterns = [
 #     path('', HeritageListAPI.as_view()),
@@ -18,5 +18,5 @@ from .views import MovieListAPI, MovieDetailAPI
 urlpatterns = [
     path('', MovieListAPI.as_view()),
     path('<int:pk>/', MovieDetailAPI.as_view()),
-
+    path('search/<str:movies>/', MoviesearchAPI.as_view()),
 ]
