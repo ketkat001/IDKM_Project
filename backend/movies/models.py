@@ -11,7 +11,6 @@ from django.conf import settings
 class tagdatas(models.Model):
     tags = models.CharField(max_length=30, null=True)
 
-
 class Movie(models.Model):
     title = models.CharField(max_length=255) 
     overview = models.TextField(null=True) 
