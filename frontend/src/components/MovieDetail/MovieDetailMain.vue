@@ -3,11 +3,9 @@
 </template>
 
 <script>
+import "@/assets/css/components/movieDetail/movieDetailMain.scss";
+
 export default {
 
 }
 </script>
-
-<style>
-
-</style>
