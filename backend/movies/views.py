@@ -9,6 +9,7 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework import generics, permissions
 from backend.pagination import CustomPagination
 from .serializers import MovieSerializer, Movie_rating, tagdatasSerializer , MovieSerializer2, MovieDetailSerializer
+from .recommend import recommend_sys
 # Create your views here.
 
 class MovieListAPI(GenericAPIView):
@@ -49,7 +50,7 @@ class MovieListAPI(GenericAPIView):
 class MovieDetailAPI(generics.GenericAPIView):
     queryset = Movie.objects.all()
     serializer_class = MovieDetailSerializer
-    print(queryset, 'quertset')
+    # print(queryset, 'quertset')
     
 
     def get(self, request, pk):
@@ -100,4 +101,14 @@ class MovieDetailAPI(generics.GenericAPIView):
             
 #             return Response(serializer.data)
 
+        return Response(serializer.data)
+
+
+class MoviesearchAPI(generics.GenericAPIView):
+    serializer_class = MovieDetailSerializer
+    queryset = Movie.objects.all()
+    def get(self, request, movies):
+        moviesearch = recommend_sys(movies)
+        queryset = Movie.objects.filter(pk__in=moviesearch)
+        serializer = MovieDetailSerializer(queryset, many=True)
         return Response(serializer.data)
