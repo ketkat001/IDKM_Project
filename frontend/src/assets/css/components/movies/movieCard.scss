@@ -1,0 +1,32 @@
+@charset "UTF-8";
+@import "@/assets/css/properties.scss";
+
+.movie-card {
+    text-align: center;
+    display: inline-block;
+    width: 200px;
+    height: 100%;
+    background-color: black;
+    overflow: hidden;
+    margin: 5px auto;
+    cursor: pointer;
+
+    img {
+        width: 100%;
+    }
+
+    &:hover {
+        transition-delay: .5s;
+        width: 350px;
+        height: 450px;
+
+        .movie-content {
+            margin: 10px;
+            opacity: 1s;
+        }
+    }
+}
+
+.info-btn {
+    background-color: black !important;
+}
