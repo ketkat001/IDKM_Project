@@ -11,7 +11,7 @@ from collections import OrderedDict
 # print(type(title))
 startCount = 0
 A = []
-number = 1
+number = 5
 with open('KMDB_movie.json', 'w', encoding="utf-8") as make_file:
     while startCount < 1000:
      
@@ -52,6 +52,7 @@ with open('KMDB_movie.json', 'w', encoding="utf-8") as make_file:
                     pass
                 else:
                     actors = actors + ','
+            tagdatas += actors + ','
             nation = data['nation']
             maker = data['company']
             overview = data['plots']['plot'][0]['plotText']

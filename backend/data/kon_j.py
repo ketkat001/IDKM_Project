@@ -1,5 +1,4 @@
 from konlpy.utils import pprint
-from konlpy.tag import Hannanum
 import json
 import urllib.request as ul
 import urllib

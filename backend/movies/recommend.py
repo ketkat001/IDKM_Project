@@ -2,45 +2,64 @@ import pandas as pd
 import numpy as np
 from pandas import Series, DataFrame
 import pymysql
-df = DataFrame()
+from konlpy.tag import Kkma
 
-movie_db = pymysql.connect(
-    user='root', 
-    passwd='ssafy', 
-    host='127.0.0.1', 
-    db='DKM', 
-    charset='utf8'
-)
 
-cursor = movie_db.cursor(pymysql.cursors.DictCursor)
+def recommend_sys(searchword):
+    kkma = Kkma()
+    df = DataFrame()
 
-sql = "select * from movies_movie_cast;"
-cursor.execute(sql)
-result = cursor.fetchall()
-result = pd.DataFrame(result)
+    movie_db = pymysql.connect(
+        user='root', 
+        passwd='ssafy', 
+        host='127.0.0.1', 
+        db='DKM', 
+        charset='utf8'
+    )
 
-sql2 = "select * from movies_genre;"
-cursor.execute(sql2)
-result2 = cursor.fetchall()
-result2 = pd.DataFrame(result2)
+    cursor = movie_db.cursor(pymysql.cursors.DictCursor)
 
-sql3 = "select * from movies_overview_tag;"
-cursor.execute(sql3)
-result3 = cursor.fetchall()
-result3 = pd.DataFrame(result3)
+    sql = "select * from movies_tagdatas;"
+    cursor.execute(sql)
+    result = cursor.fetchall()
+    result = pd.DataFrame(result)
 
-# print(result)
-# print(result2)
-# print(result3)
-A = result.loc[:, ['movie_actors']]
-B = result2.loc[:, ['name']]
-C = result3.loc[:, ['tags']]
-# print(A)
-# print(B)
-A.columns = ['name']
-C.columns = ['name']
-print(A)
-D = pd.concat([A, B, C])
-print(D)
-F = D.T
-print(F)
+    sql2 = "select * from movies_movie;"
+    cursor.execute(sql2)
+    result2 = cursor.fetchall()
+    result2 = pd.DataFrame(result2)
+
+    sql3 = "select * from movies_movie_tagdatas;"
+    cursor.execute(sql3)
+    result3 = cursor.fetchall()
+    result3 = pd.DataFrame(result3)
+
+    result3['weight'] = 1
+
+    mydict = pd.DataFrame()
+    D = pd.DataFrame(mydict)
+ 
+    words= kkma.nouns(searchword)
+
+    for w in words:
+        words_s = result[result['tags'] == w]
+        D = pd.concat([D, words_s], ignore_index=True)
+    D = D.drop('tags', axis=1)
+    D.columns = ['tagdatas_id']
+    D['movie_id'] = 1
+    D['weight'] = 1
+
+    result3 = pd.concat([result3, D], ignore_index=True)
+
+    data_df1 = result3.pivot_table(index='movie_id', columns='tagdatas_id', values = 'weight')
+    data_df1.fillna(0, inplace=True)
+    # print(data_df1)
+    m1 = Series(data_df1.loc[1])
+
+    # print(m1)
+    data_df2 = data_df1.mul(m1, axis=1)
+    data_df2 = data_df2.sum(axis = 1)
+    data_df2 = data_df2.sort_values(ascending=False)
+    return data_df2[1:21]
+
+
