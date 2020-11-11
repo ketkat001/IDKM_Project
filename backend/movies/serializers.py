@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import tagdatas, Movie, Movie_rating
+from .models import tagdatas, Movie, User_tagdatas
 
 
 # class GenreSerializer(serializers.ModelSerializer):
@@ -28,15 +28,13 @@ class MovieSerializer(serializers.ModelSerializer):
         model = Movie
         fields = ('__all__')
 
-class Movie_rating(serializers.ModelSerializer):
-    class Meta:
-        model = Movie_rating
-        fields = ('__all__')
-
 # 태그 데이터 제외하고 뮤비 정보 보내기
 class MovieSerializer2(serializers.ModelSerializer):
     class Meta:
         model = Movie
         fields = ('title', 'overview', 'poster_url', 'release_date', 'runningtime', 'genres', 'nation', 'maker', 'director')
 
-
+class User_tagdatasSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User_tagdatas
+        fields = ('__all__')
