@@ -24,7 +24,10 @@ for m in movie:
         words.append(act)
     m['fields']['tagdatas'] = words
     alltags.extend(words)
-    
+print(len(alltags))
+alltags = set(alltags)
+print(len(alltags))
+alltags = list(alltags)
 
 num = 1
 for at in alltags:
