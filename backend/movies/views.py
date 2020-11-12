@@ -31,7 +31,6 @@ class MovieListAPI(GenericAPIView):
         #         queryset = queryset.filter(Q (k_name__icontains=query) | Q (content__icontains=query)).order_by('-hit')
         page = self.paginate_queryset(queryset)
         if page is not None:
-            
             serializer = self.get_serializer(page, many=True)
             result = self.get_paginated_response(serializer.data)
             data = result.data  # pagination data
@@ -49,7 +48,7 @@ class MovieListAPI(GenericAPIView):
 class MovieDetailAPI(generics.GenericAPIView):
     queryset = Movie.objects.all()
     serializer_class = MovieDetailSerializer
-    print(queryset, 'quertset')
+
     
 
     def get(self, request, pk):
