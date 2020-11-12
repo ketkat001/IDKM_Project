@@ -34,6 +34,8 @@ with open('KMDB_movie.json', 'w', encoding="utf-8") as make_file:
 
         
         for data in datas:
+            print(data)
+            break
             file_data = OrderedDict()
             print(len(data['actors']['actor']))
             director = data['directors']['director'][0]['directorNm']
