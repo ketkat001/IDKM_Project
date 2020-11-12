@@ -13,31 +13,32 @@ startCount = 0
 A = []
 number = 5
 with open('KMDB_movie.json', 'w', encoding="utf-8") as make_file:
-    while startCount < 1000:
+    while startCount < 80056:
      
         # url = f"http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&listCount=500&title={title}&detail=Y&ServiceKey=H4T135AW903C3067983L"
-        url = f"http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&listCount=500&startCount={startCount}&detail=Y&ServiceKey=H4T135AW903C3067983L"
+        url = f"http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&listCount=1&startCount={startCount}&detail=Y&ServiceKey=H4T135AW903C3067983L"
         request = ul.Request(url)
         # print(request)
         response = ul.urlopen(request)
         rescode = response.getcode()
         # file_data[name] = {}
-
         if(rescode == 200):
             responseData = response.read()
+        try:
+            result = json.loads(responseData)
+        except:
+            startCount += 1
+            continue
 
-        result = json.loads(responseData)
-        # print(result)
         movieData = result['Data']
         datas = movieData[0]['Result']
         
 
-        
         for data in datas:
             print(data)
             break
             file_data = OrderedDict()
-            print(len(data['actors']['actor']))
+            # print(len(data['actors']['actor']))
             director = data['directors']['director'][0]['directorNm']
             title = data['title']
             actors = ''
@@ -82,6 +83,9 @@ with open('KMDB_movie.json', 'w', encoding="utf-8") as make_file:
             for i in range(len(a)):
                 tagdatas += a[i] + ', '
 
+
+
+
             # for i in range(genre):
             #     genres.append(genre[i])
 
@@ -93,12 +97,17 @@ with open('KMDB_movie.json', 'w', encoding="utf-8") as make_file:
             #     poster_url = ''
 
   
+
+
+
             file_data['model'] = "movies.movie"
             file_data['pk'] = str(number)
             number += 1
             file_data['fields'] = {"title": title, "poster_url": data['posters'], "director": director, "actors": actors, "genres": genres, "nation": nation, "maker": maker, "overview": overview, "runningtime": runningtime, "rating": rating, "release_date": release_date, "tagdatas": tagdatas}
             A.append(file_data)
-        startCount += 500
+        startCount += 1
+        print(startCount)
+    
     json.dump(A, make_file, ensure_ascii=False, indent="\t")
 
 
