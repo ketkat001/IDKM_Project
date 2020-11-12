@@ -2,15 +2,10 @@ from django.db import models
 from django.conf import settings
 
 # Create your models here.
-# class Genre(models.Model):
-#     name = models.CharField(max_length=100)
 
-# class Overview_tag(models.Model):
-#     tags = models.CharField(max_length=255)
 
 class tagdatas(models.Model):
     tags = models.CharField(max_length=30, null=True)
-
 
 class Movie(models.Model):
     title = models.CharField(max_length=255) 
@@ -26,11 +21,9 @@ class Movie(models.Model):
     nation = models.CharField(max_length=255, null=True)
     maker = models.CharField(max_length=255, null=True)
     director = models.CharField(max_length=255, null=True)
-
-class Movie_rating(models.Model):
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    rating = models.IntegerField(null=True)
+    user_dib = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='movie_user_dib', null=True)
+    user_like = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='movie_user_like', null=True)
+    user_watched = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='movie_user_watched', null=True)
 
 class User_tagdatas(models.Model):
     tagdata = models.ForeignKey(tagdatas, on_delete=models.CASCADE)

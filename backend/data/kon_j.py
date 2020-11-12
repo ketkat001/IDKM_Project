@@ -1,5 +1,4 @@
 from konlpy.utils import pprint
-from konlpy.tag import Hannanum
 import json
 import urllib.request as ul
 import urllib
@@ -25,7 +24,10 @@ for m in movie:
         words.append(act)
     m['fields']['tagdatas'] = words
     alltags.extend(words)
-    
+print(len(alltags))
+alltags = set(alltags)
+print(len(alltags))
+alltags = list(alltags)
 
 num = 1
 for at in alltags:
@@ -40,6 +42,6 @@ for at in alltags:
 with open('KMDB_Moviefinal.json', 'w', encoding="utf-8") as make_file:
     json.dump(movie, make_file, ensure_ascii=False, indent="\t")
 
-
+#중복되는 키워드 제거하기
 with open('KMDB_overtags.json', 'w', encoding="utf-8") as make_file:
     json.dump(allovert, make_file, ensure_ascii=False, indent="\t")
