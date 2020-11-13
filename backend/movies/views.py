@@ -114,7 +114,7 @@ class MoviesearchAPI(generics.GenericAPIView):
         serializer = MovieDetailSerializer(queryset, many=True)
         return Response(serializer.data)
 
-class MoviesearchAPI(generics.GenericAPIView):
+class MovierecommendAPI(generics.GenericAPIView):
     serializer_class = MovieDetailSerializer
     queryset = Movie.objects.all()
     def get(self, request, user_pk):

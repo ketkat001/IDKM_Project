@@ -34,7 +34,7 @@ def recommend_sys(searchword):
     D = pd.DataFrame(mydict)
 
     words= kkma.nouns(searchword)
-
+    print(words)
     for w in words:
         words_s = result[result['tags'] == w]
         D = pd.concat([D, words_s], ignore_index=True)

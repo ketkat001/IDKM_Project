@@ -21,7 +21,7 @@ class tagdatasSerializer(serializers.ModelSerializer):
 class MovieDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Movie
-        fields = ('title', 'overview', 'poster_url', 'release_date', 'runningtime', 'rating', 'genres', 'actors', 'nation', 'maker','director')
+        fields = ('title', 'overview', 'poster_url', 'release_date', 'rating', 'genres', 'actors')
 
 class MovieSerializer(serializers.ModelSerializer):
     class Meta:
@@ -32,7 +32,7 @@ class MovieSerializer(serializers.ModelSerializer):
 class MovieSerializer2(serializers.ModelSerializer):
     class Meta:
         model = Movie
-        fields = ('title', 'overview', 'poster_url', 'release_date', 'runningtime', 'genres', 'nation', 'maker', 'director')
+        fields = ('title', 'overview', 'poster_url', 'release_date', 'genres')
 
 class User_tagdatasSerializer(serializers.ModelSerializer):
     class Meta:
