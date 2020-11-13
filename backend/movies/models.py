@@ -2,25 +2,24 @@ from django.db import models
 from django.conf import settings
 
 # Create your models here.
-
+class actor(models.Model):
+    actor_id = models.IntegerField()
+    name = models.CharField(max_length=50, null=True)
+    profile_path = models.TextField(null=True)
+    ko_name = models.TextField(null=True)
 
 class tagdatas(models.Model):
-    tags = models.CharField(max_length=30, null=True)
+    tags = models.CharField(max_length=50, null=True)
 
 class Movie(models.Model):
     title = models.CharField(max_length=255) 
     overview = models.TextField(null=True) 
     poster_url = models.TextField(null=True)
     release_date = models.CharField(max_length = 30, null=True)
-    runningtime = models.CharField(max_length = 10, null=True)  # 상영시간 time필드 맞는지 확인좀
-    # vote_average = models.FloatField(max_length=11, null=False, blank=True)
-    rating = models.TextField(null=True)
+    rating = models.BooleanField()
     genres = models.CharField(max_length= 255, null=True)
     tagdatas = models.ManyToManyField(tagdatas, related_name='movie_tagdatas', null=True)
-    actors = models.TextField(null=True)
-    nation = models.CharField(max_length=255, null=True)
-    maker = models.CharField(max_length=255, null=True)
-    director = models.CharField(max_length=255, null=True)
+    actors = models.ManyToManyField(actor, related_name='movie_actor', null=True)
     user_dib = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='movie_user_dib', null=True)
     user_like = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='movie_user_like', null=True)
     user_watched = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='movie_user_watched', null=True)

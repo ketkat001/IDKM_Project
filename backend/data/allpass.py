@@ -8,11 +8,11 @@ from konlpy.utils import pprint
 from konlpy.tag import Hannanum
 from konlpy.tag import Kkma
 
-with open('KMDB_overtags.json', 'r', encoding='utf8') as f:
+with open('TMDB_overtags.json', 'r', encoding='utf8') as f:
     ovt = json.load(f)
 
 
-with open('KMDB_Moviefinal.json', 'r', encoding='utf8') as f:
+with open('TMDB_Moviefinal.json', 'r', encoding='utf8') as f:
     movie = json.load(f)
 
 A1 = OrderedDict()
