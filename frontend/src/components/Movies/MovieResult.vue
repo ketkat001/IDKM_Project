@@ -2,7 +2,7 @@
   <div class="movie-result">
     <h1>이런 영화를 찾으셨나요?</h1>
     <div class="result-cards row">
-      <MovieCard class="col-3" v-for="card in cardList" :key="card.id" :card="card" />
+      <MovieCard v-for="card in cardList" :key="card.id" :card="card" />
     </div>
   </div>
 </template>
