@@ -52,7 +52,6 @@ class MovieListAPI(GenericAPIView):
 class MovieDetailAPI(generics.GenericAPIView):
     serializer_class = MovieDetailSerializer
     queryset = Movie.objects.all()
-    print(queryset)
 
     def get(self, request, pk):
 
