@@ -18,11 +18,11 @@ class Movie(models.Model):
     release_date = models.CharField(max_length = 30, null=True)
     rating = models.BooleanField()
     genres = models.CharField(max_length= 255, null=True)
-    tagdatas = models.ManyToManyField(tagdatas, related_name='movie_tagdatas', null=True)
-    actors = models.ManyToManyField(actor, related_name='movie_actor', null=True)
-    user_dib = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='movie_user_dib', null=True)
-    user_like = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='movie_user_like', null=True)
-    user_watched = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='movie_user_watched', null=True)
+    tagdatas = models.ManyToManyField(tagdatas, related_name='movie_tagdatas')
+    actors = models.ManyToManyField(actor, related_name='movie_actor')
+    user_dib = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='movie_user_dib')
+    user_like = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='movie_user_like')
+    user_watched = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='movie_user_watched')
 
 class User_tagdatas(models.Model):
     tagdata = models.ForeignKey(tagdatas, on_delete=models.CASCADE)
