@@ -15,7 +15,7 @@
             </div>
             <div class="movie-buttons">
               <v-btn icon>
-                <span class="iconify" data-icon="mdi-youtube" data-inline="false"></span>
+                <font-awesome-icon :icon="['fab', 'youtube']"/>
               </v-btn>
               <v-btn icon>
                 <v-icon>mdi-heart</v-icon>
