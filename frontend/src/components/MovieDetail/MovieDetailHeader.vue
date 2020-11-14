@@ -1,19 +1,16 @@
 <template>
-  <div class="movie-header">
-    <section class="movie-poster-wrap">
-      <div class="movie-poster">
+  <section class="movie-header">
+    <div class="movie-poster-wrap">
+      <div class="movie-poster" :style="{backgroundImage: 'url('+ this.poster_url + ')'}">
       </div>
-      <div class="movie-info-wrap">
+      <div class="content-wrap">
         <div class="movie-info-content">
           <div class="movie-info-content-wrap">
             <div class="movie-info-item-data">
-              <span class="movie-year">2020</span>
-              <span class="movie-title">몰라</span>
+              <span class="movie-year">{{ movie.release_date.split('-')[0] }}</span>
+              <span class="movie-title">{{ movie.title }}</span>
               <span class="movie-genre">
-                <a href="">액션</a>
-                <a href="">드라마</a>
-                <a href="">힐링</a>
-                <a href="">망함</a>
+                <a href="" v-for="genre in (movie.genres.split(','))" :key="genre.id">{{ genre }}</a>
               </span>
             </div>
             <div class="movie-buttons">
@@ -30,14 +27,23 @@
           </div>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 
 <script>
 import "@/assets/css/components/movieDetail/movieDetailHeader.scss";
 
 export default {
-
+  name: "MovieDetailHeader",
+  props: {
+    movie: Object,
+  },
+  computed: {
+    poster_url() {
+      return '//image.tmdb.org/t/p/original/' + this.movie.poster_url
+    }
+  }
+  
 }
 </script>

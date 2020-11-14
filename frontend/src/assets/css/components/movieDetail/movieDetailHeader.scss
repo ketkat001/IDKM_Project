@@ -29,21 +29,12 @@
     left: 0;
     z-index: -1;
     opacity: 0.2;
-    background-image: url("https://movie-phinf.pstatic.net/20130627_26/13723187171858q23I_JPEG/movie_image.jpg?type=m665_443_2")
-}
-
-.movie-info-wrap {
-    max-width: 1300px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    width: 100%;
 }
 
 .movie-info-content {
     position: absolute;
     bottom: 0;
+    margin-left: 10px;
 }
 
 .movie-info-content-wrap {
@@ -88,7 +79,7 @@
 .movie-buttons {
     float: left;
     clear: both;
-    margin: 0 0 0 272px;
+    margin: 0 0 0 290px;
     display: flex;
 
     

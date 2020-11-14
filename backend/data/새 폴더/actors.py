@@ -28,7 +28,7 @@ with open('KMDB_actors.json', 'w', encoding="utf-8") as make_file:
             responseData = response.read()
 
         result = json.loads(responseData)
-        # print(result)
+        print(result)
         movieData = result['Data']
         datas = movieData[0]['Result']
         for data in datas:

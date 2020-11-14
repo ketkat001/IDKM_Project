@@ -18,7 +18,7 @@ const routes = [
     component: Home
   },
   {
-    path: '/Movies',
+    path: '/movies',
     name: 'Movies',
     component: Movies
   },
@@ -27,7 +27,6 @@ const routes = [
     name: 'MovieDetail',
     component: MovieDetail
   },
-
   {
     path: '/login',
     name: 'Login',
