@@ -5,7 +5,7 @@ import pymysql
 from konlpy.tag import Kkma
 from sqlalchemy import create_engine
 from matplotlib import pyplot
-
+import json
 
 df = DataFrame()
 movie_db = pymysql.connect(
@@ -16,16 +16,20 @@ movie_db = pymysql.connect(
     charset='utf8'
 )
 
-cursor = movie_db.cursor(pymysql.cursors.DictCursor)
-sql3 = "select * from movies_movie_tagdatas;"
-cursor.execute(sql3)
-result3 = cursor.fetchall()
-result3 = pd.DataFrame(result3)
-result3['weight'] = 1
+
+with open('movie_list.json', 'r', encoding='utf8') as f:
+            ml = json.load(f)
+
+
+
+result3 = pd.DataFrame(ml)
+
+
+
 
 
 engine = create_engine("mysql+mysqldb://root:"+"ssafy"+"@localhost/DKM", encoding='utf-8')
-result3.to_sql(name='movpandas', con=engine, if_exists='append')
+result3.to_sql(name='mls', con=engine, if_exists='append')
 
 
 # def recommend_sys(searchword):
