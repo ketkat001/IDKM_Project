@@ -18,7 +18,7 @@ movie_db = pymysql.connect(
 
 
 with open('movie_list.json', 'r', encoding='utf8') as f:
-            ml = json.load(f)
+    ml = json.load(f)
 
 
 

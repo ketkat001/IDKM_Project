@@ -27,8 +27,11 @@ for m in movie:
     mactor = m['fields']['tagdatas']
     if mactor != [""]:
         for mc in mactor:
-            A.append(A1[mc])
-            m['fields']['tagdatas'] = A
+            try:
+                A.append(A1[mc])
+            except:
+                pass    
+        m['fields']['tagdatas'] = A
     else:
         m['fields']['tagdatas'] = []
 

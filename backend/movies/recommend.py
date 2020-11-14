@@ -33,10 +33,8 @@ def recommend_sys(searchword):
     result3 = cursor.fetchall()
     result3 = pd.DataFrame(result3)
     result3['weight'] = 1
-
     D = []
     words= kkma.nouns(searchword)
-
     for w in words:
         words_s = result[result['tags'] == w]['id']
         D.extend(words_s.values)
@@ -54,11 +52,11 @@ def recommend_sys(searchword):
             
             mov_l.append(mnum)
             score_l.append(score)
+        
         data_df1 = pd.DataFrame({'movie_id': mov_l, 'score': score_l})
         df1 = data_df1.sort_values(by=['score'], ascending=False)
         df1 = df1[1:21]
         df2 = list(df1['movie_id'].values)
-
         return df2
 
 

@@ -36,16 +36,28 @@ for m in movie:
     words= kkma.nouns(tdata)
     m['fields']['tagdatas'] = words
     alltags.extend(words)
-    print(nnn)
-    
     nnn += 1
-print(len(alltags))
-alltags = set(alltags)
-print(len(alltags))
-alltags = list(alltags)
-print(alltags)
+    
+tntn = {}
+
+for tn_tag in alltags:
+    if tn_tag not in tntn:
+        tntn[tn_tag] = 1
+    else:
+        tntn[tn_tag] += 1
+alltags2 = []
+for k, v in tntn.items():
+    if v >= 2 and len(k) >= 2:
+        alltags2.append(k)
+
+
+# print(len(alltags))
+# alltags = set(alltags)
+# print(len(alltags))
+# alltags = list(alltags)
+# print(alltags)
 num = 1
-for at in alltags:
+for at in alltags2:
     overt = OrderedDict()
     overt['model'] = 'movies.tagdatas'
     overt['pk'] = num
