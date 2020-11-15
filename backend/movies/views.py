@@ -61,7 +61,8 @@ class MoviesearchAPI(generics.GenericAPIView):
     serializer_class = MovieDetailSerializer
     queryset = Movie.objects.all()
 
-    def get(self, request, movies):
+    def get(self, request):
+        movies = request.GET.get('query', '')
         moviesearch = recommend_sys(movies)
         queryset = Movie.objects.filter(pk__in=moviesearch)
         serializer = MovieDetailSerializer(queryset, many=True)

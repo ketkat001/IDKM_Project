@@ -18,7 +18,7 @@ from .views import MovieListAPI, MovieDetailAPI, MoviesearchAPI, MoviedibAPI, Mo
 urlpatterns = [
     path('', MovieListAPI.as_view()),
     path('<int:pk>/', MovieDetailAPI.as_view()),
-    path('search/<str:movies>/', MoviesearchAPI.as_view()),
+    path('search/', MoviesearchAPI.as_view()),
     path('recommend/<int:user_pk>/', MovierecommendAPI.as_view()),
     path('dib/<int:user_pk>/<int:movie_pk>/', MoviedibAPI.as_view()),
     path('like/<int:user_pk>/<int:movie_pk>/', MovielikeAPI.as_view()),
