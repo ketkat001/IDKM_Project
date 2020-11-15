@@ -9,7 +9,8 @@ export default {
     },
     MOVIES: {
       movie: '/movies/',
-      movieSearch: '/movies/search/'
+      movieSearch: '/movies/search/',
+      movieDetail: '/movie/'
     }
   }
 }

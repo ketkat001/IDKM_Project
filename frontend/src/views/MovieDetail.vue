@@ -21,9 +21,11 @@ export default {
     MovieDetailMain,
     MovieDetailFooter
   },
-  created() {
+  mounted() {
     let movieId = this.$route.params.id;
-    axios.get(SERVER.URL + SERVER.R.MOVIES.movie + movieId + '/').then((res) => {
+    console.log(SERVER.URL + SERVER.R.MOVIES.movie + movieId + '/')
+    axios.get(SERVER.URL + SERVER.R.MOVIES.movie + movieId + '/')
+    .then((res) => {
       this.movie = res.data;
     });
   },

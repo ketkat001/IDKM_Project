@@ -1,5 +1,5 @@
 <template>
-  <div class="movie-card">
+  <div class="movie-card" @click="goToMovie()">
     <img :src=this.cardPosterUrl>
     <div class="movie-content">
       <h2> {{ card.title }} </h2>
@@ -27,6 +27,7 @@
 </template>
 <script>
 import "@/assets/css/components/movies/movieCard.scss";
+import SERVER from "@/api/drf.js"
 export default {
   name: "MoviesCard",
   props: {
@@ -37,6 +38,11 @@ export default {
   computed: {
     cardPosterUrl() {
       return '//image.tmdb.org/t/p/original' + this.card.poster_url
+    }
+  },
+  methods: {
+    goToMovie() {
+      this.$router.push(SERVER.R.MOVIES.movieDetail + this.card.id + '/')
     }
   },
   data () {
