@@ -8,7 +8,8 @@ export default {
       check: '/accounts/check/'
     },
     MOVIES: {
-      movie: '/movies/'
+      movie: '/movies/',
+      movieSearch: '/movies/search/'
     }
   }
 }

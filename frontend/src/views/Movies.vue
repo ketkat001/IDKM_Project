@@ -1,6 +1,6 @@
 <template>
   <div class="movie-list">
-    <MovieResult />
+    <MovieResult :searchMovieList= $route.params.searchMovieList />
     <MovieSearch />
     <MovieSuggest />
   </div>

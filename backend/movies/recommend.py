@@ -10,7 +10,7 @@ def recommend_sys(searchword):
     df = DataFrame()
     movie_db = pymysql.connect(
         user='root', 
-        passwd='ssafy', 
+        passwd='1q2w3e4r!!', 
         host='127.0.0.1', 
         db='DKM', 
         charset='utf8'
@@ -56,7 +56,7 @@ def recommend_sys(searchword):
             score_l.append(score)
         data_df1 = pd.DataFrame({'movie_id': mov_l, 'score': score_l})
         df1 = data_df1.sort_values(by=['score'], ascending=False)
-        df1 = df1[1:21]
+        df1 = df1[1:5]
         df2 = list(df1['movie_id'].values)
 
         return df2
@@ -81,7 +81,7 @@ def recommend_sys2(user_pk):
     df = DataFrame()
     movie_db = pymysql.connect(
         user='root', 
-        passwd='ssafy', 
+        passwd='1q2w3e4r!!', 
         host='127.0.0.1', 
         db='DKM', 
         charset='utf8'

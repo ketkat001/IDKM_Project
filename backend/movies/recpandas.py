@@ -10,7 +10,7 @@ import json
 df = DataFrame()
 movie_db = pymysql.connect(
     user='root', 
-    passwd='ssafy', 
+    passwd='1q2w3e4r!!', 
     host='127.0.0.1', 
     db='DKM', 
     charset='utf8'
@@ -18,7 +18,7 @@ movie_db = pymysql.connect(
 
 
 with open('movie_list.json', 'r', encoding='utf8') as f:
-            ml = json.load(f)
+    ml = json.load(f)
 
 
 
@@ -28,7 +28,7 @@ result3 = pd.DataFrame(ml)
 
 
 
-engine = create_engine("mysql+mysqldb://root:"+"ssafy"+"@localhost/DKM", encoding='utf-8')
+engine = create_engine("mysql+mysqldb://root:"+"1q2w3e4r!!"+"@localhost/DKM", encoding='utf-8')
 result3.to_sql(name='mls', con=engine, if_exists='append')
 
 

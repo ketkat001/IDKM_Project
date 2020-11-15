@@ -11,7 +11,9 @@
             name="input"
             placeholder="생각나는 영화의 내용을 적어주세요"
             append-icon="mdi-magnify"
-            hide-details
+            hide-details="auto"
+            v-model="searchInput"
+            @keyup.enter="searchMovie()"
           >
           </v-text-field>
         </div>
@@ -49,12 +51,25 @@
 
 <script>
 import "@/assets/css/views/home.scss";
+import SERVER from "@/api/drf.js"
+import axios from "axios"
 
 export default {
   name: 'Home',
+  methods: {
+    searchMovie() {
+      axios
+        .get(SERVER.URL + SERVER.R.MOVIES.movieSearch + "?query=" + this.searchInput)
+        .then((res) => {
+          this.searchMovieList = res.data.results;
+          this.$router.push({name:'Movies', params: {searchMovieList:this.searchMovieList}})
+        })
+    }
+  },
   data() {
     return {
-      cards: []
+      searchInput: "",
+      searchMovieList: [],
     }
   }
 }

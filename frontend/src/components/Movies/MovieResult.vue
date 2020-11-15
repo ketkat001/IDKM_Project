@@ -1,6 +1,6 @@
 <template>
   <div class="movie-result">
-    <h1>이런 영화를 찾으셨나요?</h1>
+    <h1>이런 영화를 찾으셨나요? {{ searchMovieList }}</h1>
     <div class="result-cards row">
       <MovieCard v-for="card in cardList" :key="card.id" :card="card" />
     </div>
@@ -15,6 +15,9 @@ export default {
   name: "MovieResult",
   components: {
     MovieCard,
+  },
+  props: {
+    searchMovieList: Array
   },
   data() {
     return {
