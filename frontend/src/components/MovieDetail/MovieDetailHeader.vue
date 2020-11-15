@@ -17,11 +17,13 @@
               <v-btn icon>
                 <font-awesome-icon :icon="['fab', 'youtube']"/>
               </v-btn>
-              <v-btn icon>
-                <v-icon>mdi-heart</v-icon>
+              <v-btn icon @click="changeHeartIcon">
+                <v-icon v-show="heartIcon" color="pink">mdi-heart</v-icon>
+                <v-icon v-show="!heartIcon">mdi-heart</v-icon>
               </v-btn>
-              <v-btn icon>
-                <v-icon>mdi-bookmark</v-icon>
+              <v-btn icon @click="changeBookmarkIcon">
+                <v-icon v-show="bookmarkIcon" color="green">mdi-bookmark</v-icon>
+                <v-icon v-show="!bookmarkIcon">mdi-bookmark</v-icon>
               </v-btn>
             </div>
           </div>
@@ -42,6 +44,20 @@ export default {
   computed: {
     poster_url() {
       return '//image.tmdb.org/t/p/original/' + this.movie.poster_url
+    },
+  },
+  methods: {
+    changeHeartIcon() {
+      this.heartIcon = !this.heartIcon
+    },
+    changeBookmarkIcon() {
+      this.bookmarkIcon = !this.bookmarkIcon
+    }
+  },
+  data() {
+    return {
+      heartIcon: false,
+      bookmarkIcon: false,
     }
   }
   
