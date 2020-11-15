@@ -89,9 +89,27 @@ def recommend_sys2(user_pk):
 
     similarity_simple_pair = cosine_similarity(feature_vect_simple[0] , feature_vect_simple)
 
+    sql = f"select * from movies_movie_user_watched where user_id={user_pk};"
+    cursor.execute(sql)
+    result5 = cursor.fetchall()
+    result5 = pd.DataFrame(result5)
+
+    print(result5)
+
+    QQ = list(result5['movie_id'].values)
+    print(QQ)
+
     movie_lank = pd.DataFrame({'id': resultAname, 'score': similarity_simple_pair[0]})
     df1 = movie_lank.sort_values(by=['score'], ascending=False)
-    df1 = df1[1:11]
-    df2 = list(df1['id'].values)
+    df1 = list(df1['id'].values)
+    df2 = []
+    num = 0
+    for ddd in df1:
+        if num == 10:
+            break
+        if ddd not in QQ:
+            df2.append(ddd)
+            num += 1
+
 
     return df2
