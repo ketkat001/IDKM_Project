@@ -1,10 +1,10 @@
 <template>
   <div class="actor-card">
     <div class="card-image">
-      <img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"> 
+      <img :src="'//image.tmdb.org/t/p/w138_and_h175_face/' + actor.profile_path"> 
     </div>
     <div class="actor-content">
-      <h2> {{ card.title }} </h2>
+      <h2> {{ actor.ko_name }} </h2>
     </div>
   </div>
 </template>
@@ -14,7 +14,7 @@ import "@/assets/css/components/movieDetail/actorCard.scss";
 export default {
   name: "ActorCard",
   props: {
-    card: {
+    actor: {
       type: Object
     },
   },

@@ -3,8 +3,8 @@
     <div class="content-wrap">
       <div class="movie-recommend">
         <h2>이 영화와 비슷한 영화</h2>
-        <div class="recommend-list">
-          <MovieCard class="col-3" v-for="card in cardList" :key="card.id" :card="card" />
+        <div class="row">
+          <MovieCard class="recommend-card" v-for="card in cardList" :key="card.id" :card="card" />
         </div>
       </div>
     </div>

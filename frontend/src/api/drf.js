@@ -6,6 +6,9 @@ export default {
       logout: '/rest-auth/logout/',
       signup: '/accounts/auth/register/',
       check: '/accounts/check/'
+    },
+    MOVIES: {
+      movie: '/movies/'
     }
   }
 }

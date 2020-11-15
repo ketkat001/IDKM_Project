@@ -36,6 +36,7 @@ class Movie(models.Model):
         settings.AUTH_USER_MODEL, related_name='movie_user_like')
     user_watched = models.ManyToManyField(
         settings.AUTH_USER_MODEL, related_name='movie_user_watched')
+    searchdata = models.TextField()
 
 
 class User_tagdatas(models.Model):
