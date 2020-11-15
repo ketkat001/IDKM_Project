@@ -12,7 +12,7 @@ def recommend_sys(searchword):
     df = DataFrame()
     movie_db = pymysql.connect(
         user='root',
-        passwd='1q2w3e4r!!',
+        passwd='ssafy',
         host='127.0.0.1',
         db='DKM',
         charset='utf8'
@@ -49,7 +49,7 @@ def recommend_sys2(user_pk):
     df = DataFrame()
     movie_db = pymysql.connect(
         user='root',
-        passwd='1q2w3e4r!!',
+        passwd='ssafy',
         host='127.0.0.1',
         db='DKM',
         charset='utf8'
