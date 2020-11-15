@@ -44,6 +44,7 @@ class User_tagdatasSerializer(serializers.ModelSerializer):
 class MovieDetailSerializer(serializers.ModelSerializer):
 
     actors = ActorSerializer(many=True, read_only=True)
+    genres = GenreSerializer(many=True, read_only=True)
 
     class Meta:
         model = Movie
