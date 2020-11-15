@@ -1,27 +1,22 @@
 from rest_framework import serializers
-from .models import tagdatas, Movie, User_tagdatas, actor
+from .models import Tagdatas, Movie, User_tagdatas, Actor, Genres
 
-
-# class GenreSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Genre
-#         fields = ('__all__')
-
-
-# class Overview_tagSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Overview_tag
-#         fields = ('__all__')
 
 class ActorSerializer(serializers.ModelSerializer):
     class Meta:
-        model = actor
+        model = Actor
         fields = ('ko_name', 'profile_path')
+
+
+class GenreSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Genres
+        fields = ('__all__')
 
 
 class TagdatasSerializer(serializers.ModelSerializer):
     class Meta:
-        model = tagdatas
+        model = Tagdatas
         fields = ('__all__')
 
 
