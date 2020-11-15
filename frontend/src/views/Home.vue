@@ -53,16 +53,21 @@
 import "@/assets/css/views/home.scss";
 import SERVER from "@/api/drf.js"
 import axios from "axios"
-
+import { mapMutations } from "vuex"
 
 export default {
   name: 'Home',
+  created() {
+    SET_MOVIE_LIST(null)
+  },
   methods: {
+    ...mapMutations("movies", ["SET_MOVIE_LIST"]),
     searchMovie() {
       axios
         .get(SERVER.URL + SERVER.R.MOVIES.movieSearch + "?query=" + this.searchInput)
         .then((res) => {
           this.searchMovieList = res.data.results;
+          SET_MOVIE_LIST(res.data.results)
           this.$router.push('/movies/')
         })
     }

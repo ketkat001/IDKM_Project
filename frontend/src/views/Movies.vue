@@ -1,6 +1,6 @@
 <template>
   <div class="movie-list">
-    <MovieResult />
+    <MovieResult v-show="hasSearch" />
     <MovieSearch />
     <MovieSuggest />
   </div>
@@ -11,6 +11,7 @@ import "@/assets/css/views/movies.scss"
 import MovieResult from "@/components/Movies/MovieResult.vue"
 import MovieSearch from "@/components/Movies/MovieSearch.vue"
 import MovieSuggest from "@/components/Movies/MovieSuggest.vue"
+import { mapState } from "vuex`"
 
 export default {
   name: "MovieList",
@@ -18,6 +19,16 @@ export default {
     MovieResult,
     MovieSearch,
     MovieSuggest
+  },
+  computed: {
+    hasSearch() {
+      return !!movieList
+    }
+  },
+  data() {
+    return {
+      ...mapState("movies", movieList),
+    }
   }
 }
 </script>
