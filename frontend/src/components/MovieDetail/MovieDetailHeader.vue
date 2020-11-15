@@ -10,7 +10,7 @@
               <span class="movie-year">{{ movie.release_date.split('-')[0] }}</span>
               <span class="movie-title">{{ movie.title }}</span>
               <span class="movie-genre">
-                <a href="" v-for="genre in (movie.genres.split(','))" :key="genre.id">{{ genre }}</a>
+                <a href="" v-for="genre in (movie.genres)" :key="genre.id">{{ genre['genre'] }}</a>
               </span>
             </div>
             <div class="movie-buttons">
