@@ -7,28 +7,29 @@
 </template>
 
 <script>
-import "@/assets/css/views/movies.scss"
-import MovieResult from "@/components/Movies/MovieResult.vue"
-import MovieSearch from "@/components/Movies/MovieSearch.vue"
-import MovieSuggest from "@/components/Movies/MovieSuggest.vue"
-import { mapState } from "vuex`"
+import "@/assets/css/views/movies.scss";
+import MovieResult from "@/components/Movies/MovieResult.vue";
+import MovieSearch from "@/components/Movies/MovieSearch.vue";
+import MovieSuggest from "@/components/Movies/MovieSuggest.vue";
+import { mapState } from "vuex";
 
 export default {
   name: "MovieList",
   components: {
     MovieResult,
     MovieSearch,
-    MovieSuggest
+    MovieSuggest,
   },
   computed: {
+    ...mapState("movies", ["movieList"]),
     hasSearch() {
-      return !!movieList
-    }
+      return !!this.movieList;
+    },
   },
   data() {
     return {
-      ...mapState("movies", movieList),
-    }
-  }
-}
+      
+    };
+  },
+};
 </script>

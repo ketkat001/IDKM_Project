@@ -57,8 +57,8 @@ import { mapMutations } from "vuex"
 
 export default {
   name: 'Home',
-  created() {
-    SET_MOVIE_LIST(null)
+  mounted() {
+    this.SET_MOVIE_LIST(null)
   },
   methods: {
     ...mapMutations("movies", ["SET_MOVIE_LIST"]),
@@ -67,7 +67,7 @@ export default {
         .get(SERVER.URL + SERVER.R.MOVIES.movieSearch + "?query=" + this.searchInput)
         .then((res) => {
           this.searchMovieList = res.data.results;
-          SET_MOVIE_LIST(res.data.results)
+          this.SET_MOVIE_LIST(res.data.results)
           this.$router.push('/movies/')
         })
     }

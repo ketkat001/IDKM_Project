@@ -1,4 +1,4 @@
-import SERVER from "@/api/drf.js"
+// import SERVER from "@/api/drf.js"
 
 export default {
   namespaced: true,
