@@ -9,7 +9,7 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework import generics, permissions
 from backend.pagination import CustomPagination
 from .serializers import MovieSerializer, TagdatasSerializer, MovieSerializer2, MovieDetailSerializer, User_tagdatasSerializer
-from .recommend import recommend_sys, recommend_sys2
+from .newrecommend import recommend_sys, recommend_sys2
 from accounts.models import User
 # Create your views here.
 
