@@ -43,8 +43,9 @@ export default {
       }
       dispatch("postAuthData", info)
     },
-    logout() {
-      cookies.remove("auth-token")
+    logout({ commit }) {
+      console.log('You are logged out')
+      commit("SET_TOKEN", null)
     }
   }
 }
