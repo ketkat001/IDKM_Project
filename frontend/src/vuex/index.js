@@ -13,7 +13,7 @@ const modules = {
 export default new Vuex.Store ({
   modules,
   plugins: [createPersistedState({
-    paths: ["accounts"]
+    paths: ["accounts", "movies"]
   }
   )]
 })

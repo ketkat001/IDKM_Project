@@ -32,13 +32,13 @@ const routes = [
     name: 'Login',
     component: Login,
     beforeEnter(from, to, next) {
-      const loginState = cookies.get("auth-token")
-      console.log(loginState)
-      if ( loginState ) {
-        next()
-      } else {
+      const isLogin = cookies.get("auth-token")? true: false;
+      // console.log(isLogin)
+      if ( isLogin === true ) {
         alert("로그인 한 상태에서는 할 수 없습니다.")
         next('/')
+      } else {
+        next()
       }
     }
   },

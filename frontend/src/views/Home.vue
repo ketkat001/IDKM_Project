@@ -66,8 +66,8 @@ export default {
       axios
         .get(SERVER.URL + SERVER.R.MOVIES.movieSearch + "?query=" + this.searchInput)
         .then((res) => {
-          this.searchMovieList = res.data.results;
-          this.SET_MOVIE_LIST(res.data.results)
+          console.log(res.data)
+          this.SET_MOVIE_LIST(res.data)
           this.$router.push('/movies/')
         })
     }
@@ -75,7 +75,6 @@ export default {
   data() {
     return {
       searchInput: "",
-      searchMovieList: [],
     }
   }
 }
