@@ -7,13 +7,14 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import pymysql
 
+
 def recommend_sys(searchword):
     df = DataFrame()
     movie_db = pymysql.connect(
-        user='root', 
-        passwd='ssafy', 
-        host='127.0.0.1', 
-        db='DKM', 
+        user='root',
+        passwd='ssafy',
+        host='127.0.0.1',
+        db='DKM',
         charset='utf8'
     )
 
@@ -32,9 +33,11 @@ def recommend_sys(searchword):
     resultAname = [1]
     resultAname.extend(list(result['id'].values))
 
-    similarity_simple_pair = cosine_similarity(feature_vect_simple[0] , feature_vect_simple)
+    similarity_simple_pair = cosine_similarity(
+        feature_vect_simple[0], feature_vect_simple)
 
-    movie_lank = pd.DataFrame({'id': resultAname, 'score': similarity_simple_pair[0]})
+    movie_lank = pd.DataFrame(
+        {'id': resultAname, 'score': similarity_simple_pair[0]})
     df1 = movie_lank.sort_values(by=['score'], ascending=False)
     df1 = df1[1:11]
     df2 = list(df1['id'].values)
@@ -42,14 +45,13 @@ def recommend_sys(searchword):
     return df2
 
 
-
 def recommend_sys2(user_pk):
     df = DataFrame()
     movie_db = pymysql.connect(
-        user='root', 
-        passwd='ssafy', 
-        host='127.0.0.1', 
-        db='DKM', 
+        user='root',
+        passwd='ssafy',
+        host='127.0.0.1',
+        db='DKM',
         charset='utf8'
     )
 
@@ -87,7 +89,8 @@ def recommend_sys2(user_pk):
     resultAname = [1]
     resultAname.extend(list(result['id'].values))
 
-    similarity_simple_pair = cosine_similarity(feature_vect_simple[0] , feature_vect_simple)
+    similarity_simple_pair = cosine_similarity(
+        feature_vect_simple[0], feature_vect_simple)
 
     sql = f"select * from movies_movie_user_watched where user_id={user_pk};"
     cursor.execute(sql)
@@ -96,7 +99,8 @@ def recommend_sys2(user_pk):
 
     QQ = list(result5['movie_id'].values)
 
-    movie_lank = pd.DataFrame({'id': resultAname, 'score': similarity_simple_pair[0]})
+    movie_lank = pd.DataFrame(
+        {'id': resultAname, 'score': similarity_simple_pair[0]})
     df1 = movie_lank.sort_values(by=['score'], ascending=False)
     df1 = list(df1['id'].values)
     df2 = []
@@ -107,6 +111,5 @@ def recommend_sys2(user_pk):
         if ddd not in QQ:
             df2.append(ddd)
             num += 1
-
 
     return df2
