@@ -94,10 +94,7 @@ def recommend_sys2(user_pk):
     result5 = cursor.fetchall()
     result5 = pd.DataFrame(result5)
 
-    print(result5)
-
     QQ = list(result5['movie_id'].values)
-    print(QQ)
 
     movie_lank = pd.DataFrame({'id': resultAname, 'score': similarity_simple_pair[0]})
     df1 = movie_lank.sort_values(by=['score'], ascending=False)
