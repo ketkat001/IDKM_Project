@@ -51,7 +51,7 @@ export default {
   name: "Login",
   computed: {
     hasAllProperties() {
-      return !!this.loginData.userid && !!this.loginData.password
+      return !!this.loginData.email && !!this.loginData.password
     }
   },
   methods: {

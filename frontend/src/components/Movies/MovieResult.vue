@@ -2,7 +2,7 @@
   <div class="movie-result">
     <h1>이런 영화를 찾으셨나요?</h1>
     <div class="result-cards row">
-      <MovieCard class="col-3" v-for="card in cardList" :key="card.id" :card="card" />
+      <MovieCard v-for="(index, card) in movieList" :key="card.id" :card="index" />
     </div>
   </div>
 </template>
@@ -10,11 +10,14 @@
 <script>
 import "@/assets/css/components/movies/movieResult.scss";
 import MovieCard from "@/components/Movies/MovieCard.vue";
-
+import { mapState } from "vuex"
 export default {
   name: "MovieResult",
   components: {
     MovieCard,
+  },
+  computed: {
+    ...mapState("movies", ["movieList"])
   },
   data() {
     return {
