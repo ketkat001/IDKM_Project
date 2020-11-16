@@ -1,12 +1,9 @@
 <template>
   <div id="nav" :class="{ 'navbar--hidden': !showNavbar }">
     <div class="logo">
-      <p>
-        <a href="/">
-          <span>LoGo</span>
-          <!-- <img src="@/assets/logo.png" alt="logo"/> -->
-        </a>
-      </p>
+      <a href="/">
+        <img class="logo-img" src="@/../public/logo.png" alt="logo" />
+      </a>
     </div>
     <div class="nav-list">
       <router-link :to="{ name: 'Home' }">Home</router-link>
@@ -19,38 +16,39 @@
 
 <script>
 import "@/assets/css/components/navbar.scss";
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "Navbar",
   mounted() {
-    this.lastScrollPosition = window.pageYOffset
-    window.addEventListener('scroll', this.onScroll)
+    this.lastScrollPosition = window.pageYOffset;
+    window.addEventListener("scroll", this.onScroll);
   },
   beforeDestroy() {
-    window.removeEventListener('scroll', this.onScroll)
+    window.removeEventListener("scroll", this.onScroll);
   },
   computed: {
-    ...mapGetters("accounts", ["isLogin"])
+    ...mapGetters("accounts", ["isLogin"]),
   },
   methods: {
     ...mapActions("accounts", ["logout"]),
     onScroll() {
-      let currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop
+      let currentScrollPosition =
+        window.pageYOffset || document.documentElement.scrollTop;
       if (currentScrollPosition < 0) {
-        return
+        return;
       }
       if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) {
-        return
+        return;
       }
-      this.showNavbar = currentScrollPosition < this.lastScrollPosition
-      this.lastScrollPosition = currentScrollPosition
+      this.showNavbar = currentScrollPosition < this.lastScrollPosition;
+      this.lastScrollPosition = currentScrollPosition;
     },
   },
   data() {
     return {
       showNavbar: true,
-    }
-  }
+    };
+  },
 };
 </script>
