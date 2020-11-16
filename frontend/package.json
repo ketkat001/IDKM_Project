@@ -4,10 +4,13 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --port 3000",
-    "build": "vue-cli-service build --port 3000",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint --port 3000"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/vue-fontawesome": "^2.0.0",
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
     "firebase": "^8.0.0",

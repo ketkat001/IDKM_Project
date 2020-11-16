@@ -6,6 +6,12 @@ export default {
       logout: '/rest-auth/logout/',
       signup: '/accounts/auth/register/',
       check: '/accounts/check/'
+    },
+    MOVIES: {
+      movie: '/movies/',
+      movieSearch: '/movies/search/',
+      movieDetail: '/movie/',
+      movieRecommend: '/movies/recommend/'
     }
   }
 }

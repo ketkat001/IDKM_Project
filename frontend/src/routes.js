@@ -18,7 +18,7 @@ const routes = [
     component: Home
   },
   {
-    path: '/Movies',
+    path: '/movies',
     name: 'Movies',
     component: Movies
   },
@@ -27,18 +27,18 @@ const routes = [
     name: 'MovieDetail',
     component: MovieDetail
   },
-
   {
     path: '/login',
     name: 'Login',
     component: Login,
     beforeEnter(from, to, next) {
-      const islogin = cookies.get("auth-token")
-      if (!islogin) {
-        next()
-      } else {
+      const isLogin = cookies.get("auth-token")
+      console.log(isLogin)
+      if ( isLogin == null ) {
         alert("로그인 한 상태에서는 할 수 없습니다.")
         next('/')
+      } else {
+        next()
       }
     }
   },
