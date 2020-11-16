@@ -37,11 +37,32 @@ $ python manage.py runserver
 
 * 제목이나 배우의 이름이 생각나지 않더라도 괜찮아요!
 
-## Contributing
+## Structure
 
-### Pull Request Process
+```bash
+s03p31a504
+├─backend
+│  ├─accounts
+│  ├─backend
+│  ├─data
+│  ├─movies
+│  └─venv
+│
+└─frontend
+    ├─node_modules
+    ├─public
+    └─src
+        ├─api
+        ├─assets
+        │  ├─css
+        │  └─img
+        ├─components
+        ├─plugins
+        ├─views
+        └─vuex
+```
 
-will be updated
+
 
 
 ## About Us
