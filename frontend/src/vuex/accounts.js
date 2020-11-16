@@ -6,7 +6,8 @@ import router from "../routes"
 export default {
   namespaced: true,
   state: {
-    authToken: cookies.get("auth-token")
+    authToken: cookies.get("auth-token"),
+    user: null
   },
   getters: {
     isLogin: state => !!state.authToken,
@@ -16,6 +17,9 @@ export default {
     SET_TOKEN(state, token) {
       state.authToken = token
       cookies.set("auth-token", token)
+    },
+    SET_USER(state, user) {
+      state.user = user
     }
   },
   actions: {
@@ -23,7 +27,8 @@ export default {
       // console.log(info.data)
       axios.post(info.location, info.data)
       .then(res => {
-        console.log(res)
+        // console.log(res)
+        commit("SET_USER", res.data.user)
         commit("SET_TOKEN", res.data.token)
         router.push({ name: 'Home' })
       })
@@ -46,6 +51,7 @@ export default {
     logout({ commit }) {
       console.log('You are logged out')
       commit("SET_TOKEN", null)
+      commit("SET_USER", null)
     }
   }
 }
