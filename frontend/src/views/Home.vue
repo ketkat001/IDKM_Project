@@ -22,7 +22,7 @@
         <div class="board-content">
           <h1 class="main-title">
             보고 싶은 영화의 제목이 생각이 나지 않을때는?
-            <span> -----와 함께 찾아봐요.</span>
+            <span> IDONTKNOWMOVIE 와 함께 찾아봐요!</span>
           </h1>
         </div>
       </div>
