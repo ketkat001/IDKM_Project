@@ -22,7 +22,7 @@
         <div class="board-content">
           <h1 class="main-title">
             보고 싶은 영화의 제목이 생각이 나지 않을때는?
-            <span> -----와 함께 찾아봐요.</span>
+            <span> IDONTKNOWMOVIE 와 함께 찾아봐요!</span>
           </h1>
         </div>
       </div>
@@ -53,12 +53,16 @@
 import "@/assets/css/views/home.scss";
 import SERVER from "@/api/drf.js"
 import axios from "axios"
-import { mapMutations } from "vuex"
+import { mapState, mapMutations } from "vuex"
 
 export default {
   name: 'Home',
   mounted() {
     this.SET_MOVIE_LIST(null)
+    this.movieRecommend()
+  },
+  computed: {
+    ...mapState("accounts", ["user"])
   },
   methods: {
     ...mapMutations("movies", ["SET_MOVIE_LIST"]),
@@ -70,6 +74,12 @@ export default {
           this.SET_MOVIE_LIST(res.data)
           this.$router.push('/movies/')
         })
+    },
+    movieRecommend() {
+      const URL = SERVER.URL + SERVER.R.MOVIES.recommend + this.user.id
+      axios.get(URL)
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
     }
   },
   data() {

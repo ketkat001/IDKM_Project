@@ -32,9 +32,9 @@ const routes = [
     name: 'Login',
     component: Login,
     beforeEnter(from, to, next) {
-      const isLogin = cookies.get("auth-token")? true: false;
-      // console.log(isLogin)
-      if ( isLogin === true ) {
+      const isLogin = cookies.get("auth-token")
+      console.log(isLogin)
+      if ( isLogin == null ) {
         alert("로그인 한 상태에서는 할 수 없습니다.")
         next('/')
       } else {
